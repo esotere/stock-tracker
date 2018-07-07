@@ -4,7 +4,8 @@ import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 
-class Stock extends Component {
+class Stock extends Component 
+{
 	state = {
 		stock: {}
 	};
@@ -24,6 +25,20 @@ class Stock extends Component {
 
 		this.setState({
 			stock: randomStock.data
+		});
+	}
+
+	loadSelectedStock = async () => {
+		const stockIdsRes = await API.getStocks();
+
+		const stockIds = stockIdsRes.data.map(data => data._id)
+
+		const selectedId = () => stockIdsRes(stockIds.data);
+
+		const selectedStock = await API.getstock(selectedId);
+
+		this.setState({
+			stock: selectedStock.data
 		});
 	}
 
@@ -54,7 +69,7 @@ class Stock extends Component {
 				</Row>
 				<Row>
 					<Col size="md-2">
-						<Link to="/">← Back to Stocks</Link>
+						<Link to="/stocks">← Back to portfolio</Link>
 					</Col>
 				</Row>
 			</Container>

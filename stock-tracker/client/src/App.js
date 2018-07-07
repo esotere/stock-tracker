@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Stock from "./components/stock/Stock.js"
+// import Stock from "./pages/stock/Stock.js"
+
 
 class App extends Component {
   render() {
@@ -12,7 +14,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to Stock-Tracker</h1>
         </header>
         <p className="App-intro">
-          Welcome Team-React! We have lift off.
+          Hey Team-React! We have lift off.
         </p>
 
         {/* <Stock /> */}

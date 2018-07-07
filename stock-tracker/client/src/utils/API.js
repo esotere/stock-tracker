@@ -5,5 +5,14 @@ import axios from "axios";
 export default {
   getStock: function(query) {
     return axios.get("/api/stock", { params: { q: query } });
+  },
+  // Deletes the book with the given id
+  deleteStock: function(id) {
+    return axios.delete("/api/stocks/" + id);
+  },
+  // Saves a stock to the database
+  saveStock: function(stockData) {
+    return axios.post("/api/stocks", stockData);
   }
+  
 };
