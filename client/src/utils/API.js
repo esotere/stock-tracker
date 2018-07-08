@@ -1,12 +1,12 @@
 import axios from "axios";
 
-// The getRecipes method retrieves recipes from the server
+// The getStock method retrieves stock from the server
 // It accepts a "query" or term to search the recipe api for
 export default {
   getStock: function(query) {
     return axios.get("/api/stock", { params: { q: query } });
   },
-  // Deletes the book with the given id
+  // Deletes the stock with the given id
   deleteStock: function(id) {
     return axios.delete("/api/stocks/" + id);
   },
