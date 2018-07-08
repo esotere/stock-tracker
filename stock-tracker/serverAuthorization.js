@@ -20,7 +20,7 @@ app.use (bodyParser.urlencoded({
 app.use(express.static('./'));
 
 app.get('/', (req, res)=> {
-  res.sendFile('index.html');
+  res.sendFile('indexAuthorization.html');
 });
 
 app.post('/login', (req, res)=>{
