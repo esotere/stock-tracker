@@ -1,5 +1,6 @@
 import React from"react";
 import "./stickyNote.css";
+import React, { Component } from "react";
 
 
 const notes = [
@@ -11,7 +12,7 @@ const notes = [
  }
 ]
 
-const NotesContainer = props => {
+export const NotesContainer = props => {
  const notes = props.notes;
  return (
    <div>
@@ -19,13 +20,5 @@ const NotesContainer = props => {
        <NoteComponent {...notes} />
      ))}
    </div>
- )
-}
-
-const NoteComponent = props => {
- const title = props.title
- const text = props.text
- return (
-   <li>{text}</li>
  )
 }
