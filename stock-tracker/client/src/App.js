@@ -17,7 +17,7 @@ class App extends Component {
           Hey Team-React! We have lift off.
         </p>
 
-        {/* <Stock /> */}
+        <Stock />
       </div>
     );
   }
