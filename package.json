@@ -1,0 +1,7 @@
+{
+  "name": "stock-tracker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "<uokonkwo@hotmail.com>",
+  "license": "MIT"
+}
