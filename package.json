@@ -1,7 +1,26 @@
 {
   "name": "stock-tracker",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "<uokonkwo@hotmail.com>",
-  "license": "MIT"
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "8.9.1",
+    "yarn": "1.7.0",
+    "npm": "6.1.0"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start/if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "build": "react-scripts build/cd client && npm run build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && yarn install",
+    "heroku-postbuild": "npm run build"
+  }
 }

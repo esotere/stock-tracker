@@ -19,7 +19,7 @@ const auth = "Basic " + new Buffer(username + ':' + password).toString('base64')
 
 router.get("/stocks", (req, res) => {
   axios
-    .get(`https://api.intrinio.com/companies?ticker=${AAPL}`,  {headers: { "Authorization": auth }}, { params: req.query })
+    .get("https://api.intrinio.com/companies?ticker=AAPL",  {headers: { "Authorization": auth }}, { params: req.query })
     .then(({ data: { results } }) => res.json(results))
     .catch(err => res.status(422).json(err));
 });
