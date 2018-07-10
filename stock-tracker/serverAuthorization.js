@@ -1,4 +1,4 @@
-navbconst express = require('express');
+const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
@@ -12,12 +12,12 @@ var users = [
      password: ""
   }
 ]
-app.use(bodyParser.json());
-app.use (bodyParser.urlencoded({
-  extended: true
-}));
+// app.use(bodyParser.json());
+// app.use (bodyParser.urlencoded({
+//   extended: true
+// }));
 
-app.use(express.static('./'));
+// app.use(express.static('./'));
 
 app.get('/', (req, res)=> {
   res.sendFile('indexAuthorization.html');

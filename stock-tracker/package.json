@@ -3,5 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "<uokonkwo@hotmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "mongoose": "^5.2.2"
+  }
 }
