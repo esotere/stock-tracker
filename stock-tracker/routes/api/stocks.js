@@ -2,6 +2,10 @@ const router = require("express").Router();
 const stocksController = require("../../controllers/stocksController");
 
 // Matches with "/api/stocks"
+router.route("/")
+  .get(stocksController.findAll);
+
+// Matches with "/api/stocks"
 router.route("/stocks")
   .get(stocksController.findAll)
   .post(stocksController.create);
