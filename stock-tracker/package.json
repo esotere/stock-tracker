@@ -8,6 +8,7 @@
     "npm": "6.1.0"
   },
   "dependencies": {
+    "alphavantage": "^1.1.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
