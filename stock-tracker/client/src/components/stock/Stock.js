@@ -14,7 +14,7 @@ class Stock extends Component {
 	}
 
 	loadRandomStock = async () => {
-		const stockIdsRes = await API.getStocks();
+		const stockIdsRes = await API.getStock();
 
 		const stockIds = stockIdsRes.data.map(data => data._id)
 
@@ -68,7 +68,7 @@ class Stock extends Component {
 				</Row>
 				<Row>
 					<Col size="md-2">
-						<Link to="/stocks">← Back to portfolio</Link>
+						{/*<Link to="/stocks">← Back to portfolio</Link>*/}
 					</Col>
 				</Row>
 			</Container>
@@ -77,4 +77,3 @@ class Stock extends Component {
 }
 
 export default Stock;
-
