@@ -1,6 +1,9 @@
 const axios = require("axios");
 const router2 = require("express").Router();
 const IntrinioRealtime = require('intrinio-realtime')
+const api = axios.create({
+  baseURL: "https://api.intrinio.com/companies?ticker=AAPL"
+})
 
 
 
@@ -20,7 +23,7 @@ const queryUrl2 = "https://api.intrinio.com/companies?ticker=AAPL";
 // const baseURL = "https://api.intrinio.com/companies?ticker=AAPL";
 
 router2.get("/stocks", (req, res) => {
-  axios
+  api
     .get(queryUrl2,  {headers: { "Authorization": auth }}, { params: req.query })
     .then(({ data: { results } }) => res.json(results))
     .catch(err => res.status(422).json(err));

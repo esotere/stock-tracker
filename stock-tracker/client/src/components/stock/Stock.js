@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
+// import { loadQuoteForStock, loadCompanyLogo, loadNews, loadSixMonths } from "../../utils/API";
 
 
 class Stock extends Component {

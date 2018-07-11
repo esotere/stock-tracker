@@ -1,16 +1,177 @@
-import React, { Component } from "react";
-// import { Link } from "react-router-dom";
-// import { Col, Row, Container } from "../../components/Grid";
-// import Jumbotron from "../../components/Jumbotron";
-// import API from "../../utils/API";
-
+import React, { Component } from 'react'
+// import './bootstrap-4.0.0-beta.2-dist/css/bootstrap.css'
+import StockInfo from '../../components/StockInfo'
+import StockNews from '../../components/StockNews'
+import SixMonthsTable from '../../components/SixMonthTable'
+import Chart from '../../components/Chart'
+import { loadQuoteForStock, loadCompanyLogo, loadNews, loadSixMonths } from './utils/API'
 
 class Test extends Component {
-    render() {
-        return <h1>Hello</h1>;
-      }
-	
+  state = {
+    error: null,
+    enteredSymbol: 'AAPL',
+    logo: 'AAPL',
+    quote: null,
+    news: [],
+    history: [],
+    sixmonths: [],
+    displayHistory: false
+  }
+
+  componentDidMount() {
+    this.loadQuote()
+  }
+
+  loadQuote = () => {
+    const { enteredSymbol, history } = this.state
+
+    const promises = [
+      loadQuoteForStock(enteredSymbol),
+      loadCompanyLogo(enteredSymbol),
+      loadNews(enteredSymbol),
+      loadSixMonths(enteredSymbol)
+    ]
+
+    Promise.all(promises)
+      .then(data => {
+        this.setState({
+          quote: data[0],
+          logo: data[1],
+          news: data[2],
+          sixmonths: data[3],
+          history: [...history, { quote: data[0], logo: data[1] }]
+        })
+      })
+      .catch(error => {
+        if (error && error.status === 404) {
+          error = new Error(`The stock symbol '${enteredSymbol} does not exist`)
+        }
+        this.setState({ error: error })
+      })
+  }
+
+  // onChangeEnteredSymbol = {target:{value}}
+  onChangeEnteredSymbol = (event) => {
+    this.setState({
+      enteredSymbol: event.target.value.trim().toUpperCase()
+    })
+  }
+
+  loadHistory = (event) => {
+    this.setState({
+      displayHistory: !this.state.displayHistory
+    })
+  }
+
+  render() {
+    const { error, enteredSymbol, logo, quote, history, news, sixmonths, displayHistory } = this.state
+
+    return (
+      <div className="App" >
+        <div className='header'>
+          <h1 className='text-center'>Wolf of React</h1>
+        </div>
+
+        <div className='row'>
+
+          {/* Quote and news column */}
+          <div className='col-md-5 left-bar'>
+            <input
+              value={enteredSymbol}
+              placeholder="SyMbol e.g. NFLX"
+              aria-label="Symbol"
+              onChange={this.onChangeEnteredSymbol} />
+            <button onClick={this.loadQuote} className='quote-btn'>
+              Load Quote
+            </button>
+            <button onClick={this.loadHistory} className='history-btn'>
+              History
+            </button>
+
+            {/* Quote */}
+            {
+              error && <p>{error.message}</p>
+            }
+            {
+              quote ? (
+                <StockInfo
+                  logo={logo}
+                  { ...quote}
+                />
+
+              ) : (
+                  <p>Loading...</p>
+                )
+            }
+
+            {/* News */}
+            <h4 className='text-center news-title'>Latest News</h4>
+            <div className='news-container'>
+              {
+                news.map((latestNews, index) => (
+                  <StockNews key={index} {...latestNews} />
+                ))
+              }
+            </div>
+          </div>
+
+          {/* Right data-column */}
+          <div className="col-md-7 text-center">
+
+            {/* Toggle history */}
+            {
+              displayHistory === true ?
+                <div>
+                  <h3>History</h3> {
+                    history.reverse().map((historyItem, index) => (
+                      !!historyItem ?
+                        <StockInfo
+                          key={index}
+                          logo={historyItem.logo}
+                          {...historyItem.quote}
+                        /> :
+                        null
+                    ))}
+                </div> :
+                null
+            }
+
+            {/* Chart */}
+            <h4>Six Months Chart</h4>
+            <br />
+            <Chart chartData={sixmonths} />
+            <br />
+
+            {/* Table */}
+            <h4>Six Months Data</h4>
+            <br />
+            <div className="table table-container">
+              <table className="inner-table">
+                <thead>
+                  <tr className="chart-tr">
+                    <th>Date</th>
+                    <th>Open</th>
+                    <th>High</th>
+                    <th>Low</th>
+                    <th>Close</th>
+                    <th>Change</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    sixmonths.map((data, index) => (
+                      <SixMonthsTable key={index} {...data} />
+                    ))
+                  }
+                </tbody>
+              </table>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default Test;
-
