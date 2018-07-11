@@ -69,7 +69,9 @@ class Stock extends Component {
 				</Row>
 				<Row>
 					<Col size="md-2">
-						{/*<Link to="/stocks">← Back to portfolio</Link>*/}
+						<Router>
+						<Link to="/stocks">← Back to portfolio</Link>
+						</Router>
 					</Col>
 				</Row>
 			</Container>
