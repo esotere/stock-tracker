@@ -1,1 +1,1 @@
-export {default} from "./SixMonthTable"
+export {default} from "./sixMonthTable"

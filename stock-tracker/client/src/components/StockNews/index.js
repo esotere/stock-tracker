@@ -1,1 +1,1 @@
-export {default} from "./StockNews"
+export {default} from "./stockNews"

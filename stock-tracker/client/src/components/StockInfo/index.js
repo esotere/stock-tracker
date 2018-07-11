@@ -1,1 +1,1 @@
-export {default} from "./StockInfo"
+export {default} from "./stockInfo"

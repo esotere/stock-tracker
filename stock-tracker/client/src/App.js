@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Stock from "./components/stock/Stock.js"
-import Test from "./components/stock/stockTest.js"
+// import Test from "./components/stock/stockTest.js"
 
 
 
@@ -17,7 +17,7 @@ class App extends Component {
         <p className="App-intro">
           Hey Team-React! We have lift off.
         </p>
-        <Test />
+        {/* <Test /> */}
         <Stock />
       </div>
     );

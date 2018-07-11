@@ -9,8 +9,11 @@
   },
   "dependencies": {
     "alphavantage": "^1.1.1",
+    "axios": "^0.18.0",
     "bson": "^3.0.0",
     "iex-api": "^0.0.3",
+    "intrinio-realtime": "^2.1.0",
+    "mongoose": "^5.2.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
