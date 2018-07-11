@@ -1219,6 +1219,10 @@ bser@^2.0.0:
   dependencies:
     node-int64 "^0.4.0"
 
+bson@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/bson/-/bson-3.0.0.tgz#2521fe6a9b88f3af155c27359a3847a80d50237b"
+
 buffer-from@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.0.tgz#87fcaa3a298358e0ade6e442cfce840740d1ad04"

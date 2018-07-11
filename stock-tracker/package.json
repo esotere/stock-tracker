@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "alphavantage": "^1.1.1",
+    "bson": "^3.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
