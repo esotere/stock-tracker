@@ -29,7 +29,7 @@ class Stock extends Component {
 	}
 
 	loadSelectedStock = async () => {
-		const stockIdsRes = await API.getStocks();
+		const stockIdsRes = await API.getStock();
 
 		const stockIds = stockIdsRes.data.map(data => data._id)
 
