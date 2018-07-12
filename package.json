@@ -5,6 +5,8 @@
   "author": "<uokonkwo@hotmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.3"
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.3"
   }
 }
