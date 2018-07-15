@@ -10,13 +10,16 @@ import API from "../../utils/iexAPI";
 
 
 class Stock extends Component {
-	state = {
-		stock: {
+	constructor(props) { 
+		super(props)
+	this.state = {
+		stock: [{
 			// quote: loadQuoteForStock,
 			// companyLogo: loadCompanyLogo,
 			// news: loadNews
-		}
+		}]
 	};
+}
 
 	componentDidMount () {
 		this.loadRandomStock()
@@ -95,4 +98,108 @@ class Stock extends Component {
 }
 
 export default Stock;
+
+
+
+// class Stock extends Component {
+// 	constructor(props) { 
+// 		super(props)
+// 	this.state = {
+// 		stock: [{
+// 			// quote: loadQuoteForStock,
+// 			// companyLogo: loadCompanyLogo,
+// 			// news: loadNews
+// 		}]
+// 	};
+// }
+
+// 	componentDidMount () {
+// 		this.loadRandomStock()
+// 		// this.loadQuoteForStock()
+// 		// this.loadCompanyLogo()
+// 		// this.loadNews()
+// 	}
+
+// 	loadRandomStock = async () => {
+// 		const stockIdsRes = await API.getStock();
+
+// 		const stockIds = stockIdsRes.data.map(data => data._id)
+
+// 		const randomId = stockIds[Math.floor(Math.random() * stockIds.length)];
+
+// 		const randomStock = await API.getstock(randomId);
+
+// 		this.setState({
+// 			stock: randomStock.data
+// 		});
+// 	}
+
+// 	loadQuoteForStock = async () => {
+// 		const stockIdsRes = await API.getStock();
+
+// 		const stockIds = stockIdsRes.data.map(data => data._id)
+
+// 		const selectedId = () => stockIdsRes(stockIds.data);
+
+// 		const selectedStock = await API.getstock(selectedId);
+
+// 		this.setState({
+// 			stock: selectedStock.data
+// 		});
+// 	}
+
+// 	render() {
+// 		return (
+// 			<Container fluid>
+// 				{/* <Row>
+// 					<Col size="md-12"> */}
+// 						<Jumbotron>
+// 						<table>
+//               <thead>
+//                   <tr>
+// 					  <h1>
+//                       <th> ID</th>
+//                       <th> stock</th>
+//                       <th> price</th>
+//                       <th> industry</th>
+// 					  </h1>
+//                   </tr>
+//               </thead>
+//               <tbody>
+// 			  {
+//                   this.state.stocks.map((stocks, i) => {
+//                       return (
+//                         <tr key={i}>
+//                             <td>{stocks.ID}</td>
+// 						<tb>
+// 							<h2>
+// 								{this.state.stock.name}
+// 								{/* {this.state.stock.companyLogo} */}
+// 							</h2>
+// 							</tb>
+// 							<tb>
+// 							<h2>
+// 								{this.state.stock.symbol}
+// 							</h2>
+// 							</tb>
+// 							<tb>
+// 								{this.state}
+
+// 							</tb>
+// 							</tr>
+// 					  )
+// 							})
+// 							}
+// 							</tbody>
+// 							</table>
+// 						</Jumbotron>
+				
+// 			</Container>
+// 		);
+// 	}
+// }
+
+// export default Stock;
+
+
 
