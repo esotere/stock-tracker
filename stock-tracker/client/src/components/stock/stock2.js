@@ -9,7 +9,7 @@ import parser from 'html-react-parser';
 // import { render } from 'react-dom';
 
 
-class Stock2 extends React.Component {
+class Stock2 extends Component {
     constructor(props){
       super(props)
       this.state = {

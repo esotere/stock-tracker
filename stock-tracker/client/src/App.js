@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import Stock from "./components/stock/Stock.js"
 import Stock2 from "./components/stock/stock2.js"
+import Stock3 from "./components/stock/stock3.js"
+
 
 
 
@@ -17,6 +19,7 @@ class App extends Component {
         <p className="App-intro">
           Hey Team-React! We have lift off.
         </p>
+        <Stock3/>
         <Stock2 />
         <Stock />
       </div>

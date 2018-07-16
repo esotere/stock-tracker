@@ -12,6 +12,7 @@
     "axios": "^0.18.0",
     "bson": "^3.0.0",
     "express": "^4.16.3",
+    "google-finance": "^0.1.11",
     "iex-api": "^0.0.3",
     "intrinio-realtime": "^2.1.0",
     "mongoose": "^5.2.3",

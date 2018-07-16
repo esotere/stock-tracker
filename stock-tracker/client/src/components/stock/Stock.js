@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 // import API from "../../utils/API";
-import API from "../../utils/iexAPI";
+import API from "../../utils/apiRoutes";
 
 // import { loadQuoteForStock, loadCompanyLogo, loadNews } from '../../../../routes/apiRoutes3'
 
@@ -99,6 +99,11 @@ class Stock extends Component {
 
 export default Stock;
 
+//=======================================================================================================
+//=================================================================================================================
+//===========================================================================================================
+
+// import { Container } from "../../components/Grid";
 
 
 // class Stock extends Component {
@@ -171,21 +176,21 @@ export default Stock;
 //                       return (
 //                         <tr key={i}>
 //                             <td>{stocks.ID}</td>
-// 						<tb>
+// 						<td>
 // 							<h2>
 // 								{this.state.stock.name}
 // 								{/* {this.state.stock.companyLogo} */}
 // 							</h2>
-// 							</tb>
-// 							<tb>
+// 							</td>
+// 							<td>
 // 							<h2>
 // 								{this.state.stock.symbol}
 // 							</h2>
-// 							</tb>
-// 							<tb>
+// 							</td>
+// 							<td>
 // 								{this.state}
 
-// 							</tb>
+// 							</td>
 // 							</tr>
 // 					  )
 // 							})
