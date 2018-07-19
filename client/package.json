@@ -5,16 +5,23 @@
   "dependencies": {
     "alphavantage": "^1.1.1",
     "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "html-react-parser": "^0.4.6",
+    "iex-api": "^0.0.3",
+    "intrinio-client": "^0.0.5",
+    "intrinio-realtime": "^2.1.0",
     "mongoose": "^5.2.2",
+    "parse-react": "^0.5.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "recharts": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build/node scripts/build.js",
+    "build": "react-scripts build node scripts/build.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

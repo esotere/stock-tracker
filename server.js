@@ -1,7 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const routes = require("./src/components/routes");
+const routes = require("./routes/apiRoute.js");
+// const routes2 = require("./routes/apiRoutes2.js");
+// const routes3 = require("./routes/apiRoutes3");
 const app = express();
 const PORT = process.env.PORT || 3007;
 
@@ -14,6 +16,8 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(routes);
+// app.use(routes2);
+// app.use(routes3)
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactstocklist");
