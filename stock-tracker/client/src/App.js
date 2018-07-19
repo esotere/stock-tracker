@@ -4,38 +4,53 @@ import './App.css';
 import NotesContainer from './components/NoteContainer/stickyNote'
 import Navbar from './components/Navbar/navbar';
 
-class App extends Component {
-  state = {
-    notes: []
+
+class App extens Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+
+    }
   }
 
-  storeNote = note => {
-    this.setState({notes: [
-      ...this.state.notes, {text: note}
-    ]})
+render() {
+  return (
+    <BrowserRouter>
+      <div>
+        <Switch>
+          <Route exact path = '/ render' = {() => (
+            (this.state.loggedIn !== "" ? (
+              <Redirect to = "/profile"/>
+            ) : (
+              <Redirect to = "/login"/>
+            )
+          )
+        )} />
+            <Route path="/login" component={Login}/>
+            <Route path="/myStock" component={MyStock}/>
+            <Route path="/profile" component={Profile}/>
+            <Route path="/search" component={Search}/>
+            <Route path="/home" component={Home}/>
+          </Switch>
+        </div>
+      </BrowserRouter>
+      );
+    }
   }
 
-  deleteNote = id => {
-    // this.setState({notes: [ ...this.state.notes, {text: note}
-    // ]}) // find the note matching the id in this.state.notes
-    // delete the note
-    // store the array without that note
-  }
+  export default App;
 
-  render() {
-    return (
-      <div className="App">
-      <h1>Hi I am a React App </h1>
-      <p> Notes to Remember </p>
-      <NotesContainer
-        notes={this.state.notes}
-        storeNote={this.storeNote}
-        deleteNote={this.deleteNote}
-      />
-      </div>
-    );
-    //return React.createElement('div', {className: 'App'}, React)
-  }
+
+
+  )
 }
 
-export default App;
+
+
+
+
+
+
+
+}
