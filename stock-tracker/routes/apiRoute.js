@@ -34,7 +34,7 @@ const api = axios.create({
 
 router.get("/", (req, res) => {
     axios
-      .get(api, { params: req.query })
+      .get(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&apikey=LFMT1TZ5KQGSDKHN`, { params: req.query })
       .then(({ data: { results } }) => res.json(results))
       .catch(err => res.status(422).json(err));
   });
@@ -42,7 +42,7 @@ router.get("/", (req, res) => {
 
 router.get("/stocks", (req, res) => {
   axios
-    .get("https://api.iextrading.com/1.0", { params: req.query })
+    .get(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&apikey=LFMT1TZ5KQGSDKHN`, { params: req.query })
     .then(({ data: { results } }) => res.json(results))
     .catch(err => res.status(422).json(err));
 });

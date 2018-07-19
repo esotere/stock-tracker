@@ -3,7 +3,7 @@ import React, { Component } from "react";
 // import { Col, Row, Container } from "../../components/Grid";
 // import Jumbotron from "../../components/Jumbotron";
 // import API from "../../utils/API";
-// import API from "../../utils/iexAPI";
+// import API from "../../utils/apiRoutes";
 import axios from "axios"
 import parser from 'html-react-parser';
 // import { render } from 'react-dom';
@@ -21,14 +21,18 @@ class Stock2 extends Component {
           {"ID":"3", "stock":"AMZN", "price": "$810.45",
            "industry":"Tech"},
           {"ID":"4", "stock":"FB", "price": "$95.34",
-          "industry":"Tech"},
+          "industry":"Tech"}
         ],
       };
     }
   
     updateStock(stock){
+      
+      if (this.props.data) {
     // let stock = (e.currentTarget).data('stock');
-      let url=`https://www.google.com/finance/info?q=NASDAQ:${stock}`;
+      // let url2=`https://www.google.com/finance/info?q=NASDAQ:${stock}`;
+      let url=`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=1min&apikey=LFMT1TZ5KQGSDKHN`;
+
       axios.get(url)
            .then(response => {
           let json = parser.parse(response.data);
@@ -39,6 +43,7 @@ class Stock2 extends Component {
           })
       });
     }
+  }
 
     deleteStock(stock) {
         

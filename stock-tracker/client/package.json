@@ -12,6 +12,7 @@
     "intrinio-client": "^0.0.5",
     "intrinio-realtime": "^2.1.0",
     "mongoose": "^5.2.2",
+    "parse-react": "^0.5.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",

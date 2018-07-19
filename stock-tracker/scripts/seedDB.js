@@ -11,7 +11,11 @@ mongoose.connect(
 const stockSeed = [
 	
 	{
-				date: new Date(Date.now())
+		
+		name: "",
+		symbol: "",
+		summary: "",		
+		date: new Date(Date.now())
 	}
 ];
 

@@ -2,8 +2,9 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
-// import API from "../../utils/API";
-import API from "../../utils/apiRoutes";
+import API from "../../utils/API";
+// import API from "../../utils/intrinioApi";
+// import API from "../../utils/apiRoutes";
 
 // import { loadQuoteForStock, loadCompanyLogo, loadNews } from '../../../../routes/apiRoutes3'
 
@@ -12,6 +13,7 @@ import API from "../../utils/apiRoutes";
 class Stock extends Component {
 	constructor(props) { 
 		super(props)
+		this.stock = props.stock
 	this.state = {
 		stock: [{
 			// quote: loadQuoteForStock,
@@ -31,6 +33,10 @@ class Stock extends Component {
 	loadRandomStock = async () => {
 		const stockIdsRes = await API.getStock();
 
+		if (this.props.data) {
+		
+
+
 		const stockIds = stockIdsRes.data.map(data => data._id)
 
 		const randomId = stockIds[Math.floor(Math.random() * stockIds.length)];
@@ -40,10 +46,13 @@ class Stock extends Component {
 		this.setState({
 			stock: randomStock.data
 		});
+	  }
 	}
 
-	loadQuoteForStock = async () => {
+	getStock = async () => {
 		const stockIdsRes = await API.getStock();
+
+		if (this.props.data) {
 
 		const stockIds = stockIdsRes.data.map(data => data._id)
 
@@ -54,17 +63,23 @@ class Stock extends Component {
 		this.setState({
 			stock: selectedStock.data
 		});
+	  }
 	}
 
 	render() {
+
+		const data = this.state.stock;
+        const listItems = data.map((d) => <li key={d.ID +1}></li>);
+
+
 		return (
 			<Container fluid>
 				<Row>
 					<Col size="md-12">
 						<Jumbotron>
-
+ 
 							<h1>
-								{this.state.stock.name}
+								{listItems}
 								{/* {this.state.stock.companyLogo} */}
 							</h1>
 							<h2>
