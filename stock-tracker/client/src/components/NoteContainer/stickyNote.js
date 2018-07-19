@@ -5,7 +5,6 @@ class NotesContainer extends Component {
   state = {input: ''}
 
   handleButtonClick = (e) => {
-    e.preventDefault();
     this.props.storeNote(this.state.input)
 
   }

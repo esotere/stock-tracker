@@ -16,7 +16,8 @@ class App extends Component {
   }
 
   deleteNote = id => {
-    // find the note matching the id in this.state.notes
+    // this.setState({notes: [ ...this.state.notes, {text: note}
+    // ]}) // find the note matching the id in this.state.notes
     // delete the note
     // store the array without that note
   }
