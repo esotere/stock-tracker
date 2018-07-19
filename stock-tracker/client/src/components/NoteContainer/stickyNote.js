@@ -4,8 +4,10 @@ import NotesComponent from './NotesComponent';
 class NotesContainer extends Component {
   state = {input: ''}
 
-  handleButtonClick = () => {
+  handleButtonClick = (e) => {
+    e.preventDefault();
     this.props.storeNote(this.state.input)
+
   }
 
   render() {
@@ -17,7 +19,7 @@ class NotesContainer extends Component {
         value={this.state.input}
         onChange={evt => this.setState({input: evt.target.value})}
       />
-      <button onClick={this.handleButtonClick}>Store Note</button>
+      <button onClick={this.handleButtonClick}>Enter</button>
       </div>
     )
   }

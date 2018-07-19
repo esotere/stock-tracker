@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div className="App">
       <h1>Hi I am a React App </h1>
-      <p> This really works </p>
+      <p> Notes to Remember </p>
       <NotesContainer
         notes={this.state.notes}
         storeNote={this.storeNote}
