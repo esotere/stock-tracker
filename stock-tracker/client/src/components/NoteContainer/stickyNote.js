@@ -6,6 +6,7 @@ class NotesContainer extends Component {
 
   handleButtonClick = (e) => {
     this.props.storeNote(this.state.input)
+    this.state.input = "";
 
   }
 
@@ -26,3 +27,41 @@ class NotesContainer extends Component {
 
 
 export default NotesContainer;
+
+class App extends Component {
+  state = {
+    notes: []
+  }
+
+  storeNote = note => {
+    this.setState({notes: [
+      ...this.state.notes, {text: note}
+    ]})
+  }
+
+  deleteNote = id => {
+    // this.setState({notes: [ ...this.state.notes, {text: note}
+    // ]}) // find the note matching the id in this.state.notes
+    // delete the note
+    // store the array without that note
+  }
+
+
+
+render() {
+  return (
+    <div className="App">
+    <h1>Hi I am a React App </h1>
+    <p> Notes to Remember </p>
+    <NotesContainer
+      notes={this.state.notes}
+      storeNote={this.storeNote}
+      deleteNote={this.deleteNote}
+    />
+    </div>
+  );
+}
+}
+
+
+export default App;

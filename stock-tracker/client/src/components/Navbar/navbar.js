@@ -12,7 +12,7 @@ render(){
       <div class = 'navSearch navBarTab'> </div>
       <div class = 'navStocks navBarTab'></div>
     </div>
-    
+
   )
 }
 }
@@ -26,4 +26,4 @@ render(){
 
 
 
-export default navbar;
+export default Navbar;

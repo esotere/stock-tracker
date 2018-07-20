@@ -1,56 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import NotesContainer from './components/NoteContainer/stickyNote'
-import Navbar from './components/Navbar/navbar';
+import React from 'react';
+import Home from './Home';
+import MyStock from './MyStock';
+import Profile from './Profile';
+import Search from './Search';
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
 
-class App extens Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-
-    }
-  }
-
-render() {
-  return (
-    <BrowserRouter>
-      <div>
-        <Switch>
-          <Route exact path = '/ render' = {() => (
-            (this.state.loggedIn !== "" ? (
-              <Redirect to = "/profile"/>
-            ) : (
-              <Redirect to = "/login"/>
-            )
-          )
-        )} />
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          <Switch>
+            <Route exact path="/" component={Home}/>
             <Route path="/login" component={Login}/>
-            <Route path="/myStock" component={MyStock}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/search" component={Search}/>
-            <Route path="/home" component={Home}/>
+            <Route path="/myStock" component={MyStock}/>
           </Switch>
         </div>
       </BrowserRouter>
-      );
-    }
+    );
   }
-
-  export default App;
-
-
-
-  )
 }
 
 
-
-
-
-
-
-
-}
+export default App;
