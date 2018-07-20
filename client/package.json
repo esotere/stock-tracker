@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && cd client node scripts/build.js",
+    "build": "react-scripts build node scripts/build.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
