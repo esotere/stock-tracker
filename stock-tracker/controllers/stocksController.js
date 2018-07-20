@@ -3,7 +3,7 @@ const db = require("../models");
 // Defining methods for the stocksController
 module.exports = {
   findAll: function(req, res) {
-    db.stock
+    db.Stock
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))

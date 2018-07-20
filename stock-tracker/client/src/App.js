@@ -23,13 +23,12 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Stock-Tracker</h1>
         </header>
-        {/* <p className="App-intro">
+        { <p className="App-intro">
           Hey Team-React! We have lift off.
-        </p> */}
-        {/* <Stock3/>
-        <Stock2 />
-        <Stock /> */}
-        
+        </p> }
+         {/* <Stock3/>
+        <Stock2 /> */}
+        <Stock /> 
       </div>
     );
   }
