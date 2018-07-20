@@ -15,11 +15,9 @@ class Stock extends Component {
 		super(props)
 		this.stock = props.stock
 	this.state = {
-		stock: [{
-			// quote: loadQuoteForStock,
-			// companyLogo: loadCompanyLogo,
-			// news: loadNews
-		}]
+		stock: [
+			
+		]
 	};
 }
 
