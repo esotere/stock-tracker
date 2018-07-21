@@ -21,11 +21,11 @@
   },
   "scripts": {
     "start": "react-scripts start if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "build": "react-scripts build && cd client && npm run build",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon server\" \"npm run client\"",
     "client": "cd client && npm run start",
     "install": "cd client && yarn install",
-    "heroku-postbuild": "npm run build"
+    "build": "cd client && react-scripts build && yarn build",
+    "heroku-postbuild": "yarn build"
   }
 }
