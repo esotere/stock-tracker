@@ -1,15 +1,12 @@
 import React from 'react';
-import Home from './Home';
-import MyStock from './MyStock';
-import Profile from './Profile';
-import Search from './Search';
+import Home from './components/Home';
+import MyStock from './components/MyStock';
+import Profile from './components/Profile';
+import Search from './components/Search';
+import Login from './components/Login';
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 
-  render() {
-    return (
-      <BrowserRouter>
-        <div>
-
+class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
