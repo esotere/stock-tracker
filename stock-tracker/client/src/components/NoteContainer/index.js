@@ -1,3 +1,3 @@
-export * from './stickyNote';
-export * from  './stickyNote.css';
-export * from './NotesComponent';
+export {default} from  './stickyNote.js';
+// export {default} from  './stickyNote.css';
+export {default} from './NotesComponent';

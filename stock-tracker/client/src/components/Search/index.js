@@ -1,10 +1,3 @@
-
-import Search from './search'
-
-const Search = props => {
-  return (
-    <div>
-      <Login/>
-    </div>
-  )
-}
+export * from './InputField';
+export {default} from './InputSearch';
+export * from './test';

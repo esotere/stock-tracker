@@ -1,3 +1,3 @@
 // export {default} from "./stock"
-// export * from "./StockInd"
-export * from "./stock"
+// export {default} from ./StockInd"
+export {default} from "./stock"

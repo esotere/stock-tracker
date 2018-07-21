@@ -1,10 +1,12 @@
+import React from 'react';
+import Greeting from './Greeting';
 
-import Profile from './profile'
-
-const Home = props => {
+const Profile = props => {
   return (
     <div>
-      <profile />
+      <Greeting name={'Sarah'}/>
     </div>
   )
 }
+
+export default Profile;
