@@ -17,13 +17,22 @@ class Stock extends Component {
 			// news: loadNews
 		}
 	};
-
-	componentDidMount () {
-		this.loadRandomStock()
-		// this.loadQuoteForStock()
-		// this.loadCompanyLogo()
-		// this.loadNews()
+	constructor(props) { 
+		super(props)
+		this.stock = props.stock
+	this.state = {
+			stock: [
+				
+			]
+		};
 	}
+
+	// componentDidMount () {
+	// 	this.loadRandomStock()
+	// 	// this.loadQuoteForStock()
+	// 	// this.loadCompanyLogo()
+	// 	// this.loadNews()
+	// }
 
 	loadRandomStock = async () => {
 		const stockIdsRes = await API.getStock();
@@ -70,25 +79,25 @@ class Stock extends Component {
 						</Jumbotron>
 					</Col>
 				</Row>
-				<Row>
-					<Col size="md-10 md-offset-1">
-						<article>
-							<h1>Summary</h1>
-							{/* {this.state.stock.news} */}
-							<p>
-								{this.state.stock.summary}
-							</p>
-						</article>
-					</Col>
-				</Row>
-				<Row>
-					<Col size="md-2">
-						{/* <Router>
-						<Link to="/stocks">← Back to portfolio</Link>
-						</Router> */}
+					{/* <Row>
+						<Col size="md-10 md-offset-1">
+							<article>
+								<h1>Summary</h1>
+								{this.state.stock.news}
+								<p>
+									{this.state.stock.summary}
+								</p>
+							</article>
+						</Col>
+					</Row>
+					<Row>
+						<Col size="md-2">
+							<Router>
+							<Link to="/stocks">← Back to portfolio</Link>
+							</Router>
 
-					</Col>
-				</Row>
+						</Col>
+					</Row> */}
 			</Container>
 		);
 	}

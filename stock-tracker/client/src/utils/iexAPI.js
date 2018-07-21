@@ -6,9 +6,9 @@ import { IEXClient } from 'iex-api'
 
 // const router = require("express").Router();
 
-const iex = new IEXClient(fetch)
-iex.stockCompany('AAPL')
-  .then(quote => console.log(quote))
+// const iex = new IEXClient(fetch)
+// iex.stockCompany('AAPL')
+//   .then(quote => console.log(quote))
 
 const api = axios.create({
   baseURL: "https://api.iextrading.com/1.0",
