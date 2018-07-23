@@ -1,13 +1,6 @@
 import axios from "axios";
 
 
-
-
-// The getStock method retrieves stock from the server
-// It accepts a "query" or term to search the stock api for
-// import router from "react"
-
-
 export default {
   getRandomStock: function(query) {
     return axios.get("/api/stock", { params: { q: query } });
@@ -17,11 +10,11 @@ export default {
   },
   // Deletes the stock with the given id
   deleteStock: function(id) {
-    return axios.delete("/api/stocks/" + id);
+    return axios.delete("/api/stock/" + id);
   },
   // Saves a stock to the database
   saveStock: function(stockData) {
-    return axios.post("/api/stocks", stockData);
+    return axios.post("/api/stock", stockData);
   }
 };
 

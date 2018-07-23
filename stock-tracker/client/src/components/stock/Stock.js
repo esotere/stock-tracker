@@ -8,7 +8,6 @@ import API from "../../utils/iexAPI";
 // import { loadQuoteForStock, loadCompanyLogo, loadNews } from '../../../../routes/apiRoutes3'
 
 
-
 class Stock extends Component {
 	state = {
 		stock: {
@@ -36,13 +35,9 @@ class Stock extends Component {
 
 	loadRandomStock = async () => {
 		const stockIdsRes = await API.getStock();
-
 		const stockIds = stockIdsRes.data.map(data => data._id)
-
 		const randomId = stockIds[Math.floor(Math.random() * stockIds.length)];
-
 		const randomStock = await API.getstock(randomId);
-
 		this.setState({
 			stock: randomStock.data
 		});
@@ -50,13 +45,9 @@ class Stock extends Component {
 
 	loadQuoteForStock = async () => {
 		const stockIdsRes = await API.getStock();
-
 		const stockIds = stockIdsRes.data.map(data => data._id)
-
 		const selectedId = () => stockIdsRes(stockIds.data);
-
 		const selectedStock = await API.getstock(selectedId);
-
 		this.setState({
 			stock: selectedStock.data
 		});
@@ -76,6 +67,12 @@ class Stock extends Component {
 							<h2>
 								{this.state.stock.symbol}
 							</h2>
+							<form>
+								<Input name="title" placeholder="Title (required)" />
+								<Input name="author" placeholder="Author (required)" />
+								<TextArea name="synopsis" placeholder="Synopsis (Optional)" />
+								<FormBtn>Submit Book</FormBtn>
+							</form>
 						</Jumbotron>
 					</Col>
 				</Row>

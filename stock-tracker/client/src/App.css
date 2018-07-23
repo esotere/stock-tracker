@@ -10,12 +10,14 @@
 .App-header {
   background-color: rgb(22, 0, 146);
   height: 150px;
-  padding: 0px;
+  padding: 10px;
   color: white;
+  vertical-align: middle;
 }
 
 .App-title {
   font-size: 1.5em;
+  padding-top: 10px;
 }
 
 .App-intro {
