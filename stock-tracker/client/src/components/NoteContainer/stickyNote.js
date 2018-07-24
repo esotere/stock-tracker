@@ -6,7 +6,7 @@ class NotesContainer extends Component {
 
   handleButtonClick = (e) => {
     this.props.storeNote(this.state.input)
-    this.state.input = "";
+    this.setstate.input({input})
 
   }
 

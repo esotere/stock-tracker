@@ -1,10 +1,13 @@
 import React from 'react';
 import InputSearch from './InputSearch'
 
-export const test = props => {
+export const test = (props) => {
+  const input = props.input;
+  const searchedStocks = props.searchedStocks;
+  const storedInput = props.storedInput;
   return (
-    <div>
-    Input Field  {'Amazon'}
-    </div>
+    <ul>
+     {'Amazon'}
+    </ul>
   )
 }

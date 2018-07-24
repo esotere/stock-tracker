@@ -4,7 +4,7 @@ import Greeting from './Greeting';
 const Profile = props => {
   return (
     <div>
-      <Greeting name={'Sarah'}/>
+      <Greeting name={'sarah'}/>
     </div>
   )
 }

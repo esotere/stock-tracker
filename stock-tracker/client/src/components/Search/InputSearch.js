@@ -1,39 +1,41 @@
 import React, { Component}  from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes  from 'prop-types';
+import test from './test';
 
 
 class InputSearch extends React.Component {
-  state = {input: ''}
+  state = {input: '',
+  searchedStocks:[],
+}
 
-  handleButtonClick = (e) => {
-    this.props.storeInput(this.state.input)
-    this.setState({input: ''})
-  }
+  // handleButtonClick = (evt) => {
+  //    this.props.storedInput(this.state.input)
+  //    this.setState({input: input, searchedStock:[...this.props.searchedStock]})
+  // }
 
   render() {
   const {searchedStocks} = this.props;
     return (
-      <div>
-      {[].map(stock => <p>{stock.text}</p>)}
+      <div className="form-group">
+      {this.state.searchedStocks.map(stock => <p>{stock.text}</p>)}
       <input type='text'
         value={this.state.input}
         onChange={evt => this.setState({input: evt.target.value})}
       />
       <button onClick={this.handleButtonClick}>Enter</button>
       </div>
+
     )
   }
 }
 
-export default InputSearch;
+InputSearch.propTypes = {
+  input: ''
+};
 
-//
-//
-// .defaultProps = {
-//   input: ''
-// };
-//
-// .propTypes = {
-//   input: PropTypes.string
-// };
+InputSearch.propTypes = {
+  input: PropTypes.string
+};
+
+export default InputSearch;

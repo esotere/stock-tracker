@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import InputSearch from './InputSearch';
+import InputSearch from './InputSearch';
 
 const InputField = (props) => {
   const text = props.text;
@@ -9,4 +9,4 @@ const InputField = (props) => {
     </ul>
   )
 }
-// export default InputField;
+ export default InputField;
