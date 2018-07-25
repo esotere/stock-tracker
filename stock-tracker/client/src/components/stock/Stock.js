@@ -67,12 +67,6 @@ class Stock extends Component {
 							<h2>
 								{this.state.stock.symbol}
 							</h2>
-							<form>
-								<Input name="title" placeholder="Title (required)" />
-								<Input name="author" placeholder="Author (required)" />
-								<TextArea name="synopsis" placeholder="Synopsis (Optional)" />
-								<FormBtn>Submit Book</FormBtn>
-							</form>
 						</Jumbotron>
 					</Col>
 				</Row>

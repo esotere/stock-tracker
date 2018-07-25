@@ -39,9 +39,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+          <button class="active waves-effect waves-light btn">Login</button>
+          <button class="active waves-effect waves-light btn">Profile</button>
+          <button class="active waves-effect waves-light btn">Search</button>
+          <button class="active waves-effect waves-light btn">My Stocks</button>
+
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Your Stock Tracker</h1>
+          <h1 className="App-title">My Stock Tracker</h1>
         </header>
         <Stock />
         <LoginPage />
