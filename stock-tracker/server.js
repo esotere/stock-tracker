@@ -5,7 +5,7 @@ const routes = require("./routes/apiRoute.js");
 // const routes2 = require("./routes/apiRoutes2.js");
 // const routes3 = require("./routes/apiRoutes3");
 const app = express();
-const PORT = process.env.PORT || 3007;
+const PORT = process.env.PORT || 3000;
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
