@@ -2,12 +2,17 @@ import axios from "axios"
 import parser from 'html-react-parser';
 import React, { Component } from "react";
 // import React from "react";
+import router from "react"
+
 
 
 // import { render } from 'react-dom';
-// import API from "../../utils/apiRoutes";
+import API from "../../intrinioApi";
 
+const Api = router.get("/stocks", (req, res) => {
 
+    return axios.get(`https://api.iextrading.com/1.0?/stock/aapl/batch?types=quote,news,chart&range=1m&last=1`, { params: { q: query } });
+    })
 
 class Stock3 extends Component {
     constructor(props){
@@ -26,32 +31,49 @@ class Stock3 extends Component {
         ],
       };
     }
+
+    componentDidMount() {
+        Api.getStock()
+           .then(data => {
+      if (!data.data || !data.data['Meta Data']) {
+          return;
+        }
+         const newStock = {
+             symbol: data.data["Meta Data"].Symbol
+         }
+         this.setState({
+             stocks: [...this.state.stock, newStock]
+         })
+     })
+       
+    }
     
-    componentDidMount(){
-        this.loadStock()
-    }
+//     componentDidMount(){
+//         this.loadStock()
+//     }
 
-   loadStock(stock){
-    if (this.props.data) {
+//    loadStock(stock){
+//     if (this.props.data) {
 
-    // let stock = (e.currentTarget).data('stock');
-    //   const apiKey = process.env.ALPHA_VANTAGE_API_KEY;
-      let url=`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&apikey=LFMT1TZ5KQGSDKHN`;
-     return axios.get(url)
-           .then(response => {
-          let json = parser.parse(response.data);
-          let bank = this.state.stocks;
-          bank.price = json.l;
-          this.setState({
-              stocks: bank
-          })
-      });
-    }
-    }
+//     // let stock = (e.currentTarget).data('stock');
+//     //   const apiKey = process.env.ALPHA_VANTAGE_API_KEY;
+//       let url=`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&apikey=LFMT1TZ5KQGSDKHN`;
+//      return axios.get(url)
+//            .then(response => {
+//           let json = parser.parse(response.data);
+//           let bank = this.state.stocks;
+//           bank.price = json.l;
+//           this.setState({
+//               stocks: bank
+//           })
+//       });
+//     }
+//     }
+    
 
-    deleteStock(stock) {
+//     deleteStock(stock) {
         
-    }
+//     }
   
     render(){
         const data = this.state.stocks;

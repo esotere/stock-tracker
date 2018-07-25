@@ -25,6 +25,11 @@ app.get('/lol', (req, res) => {
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactstocklist");
 
+// mongoose.Promise = Promise;
+// mongoose.connect(MONGODB_URI, {
+//     useNewUrlParser: true
+// });
+
 // Start the API server
 app.listen(PORT, function() {
 	console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

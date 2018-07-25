@@ -1,0 +1,4 @@
+{
+    "dbUri": "process.env.MONGODB_URI ||mongodb://localhost/react_passport",
+    "jwtSecret": "a secret phrase!!"
+  }

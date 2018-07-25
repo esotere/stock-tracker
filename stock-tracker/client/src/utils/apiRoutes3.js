@@ -1,5 +1,10 @@
 import axios from "axios";
 // const router3 = require("express").Router();
+import { IEXClient } from 'iex-api'
+ 
+const iex = new IEXClient(fetch)
+iex.stockCompany('AAPL')
+  .then(quote => console.log(quote))
 
 
 

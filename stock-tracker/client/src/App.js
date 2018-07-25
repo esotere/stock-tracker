@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import Stock from "./components/stock/Stock.js"
 import Stock2 from "./components/stock/stock2.js"
-import Stock3 from "./components/stock/stock3.js"
-import API from './utils/API';
+// import Stock3 from "./components/stock/stock3.js"
+import Stock4 from "./components/stock/Stock4.js"
 import axios from 'axios';
 
 
@@ -13,22 +13,25 @@ import axios from 'axios';
 class App extends Component {
   componentWillMount() {
     console.log('><><')
+
+    axios.get('/api/nasdaq-finance-attempt')
+      .then(data => console.log(data))
     
    
-    API.RandomStock()
-      .then(data => {
-        if (!data.data || !data.data['Meta Data']) {
-          return;
-        }
+    // API.RandomStock()
+    //   .then(data => {
+    //     if (!data.data || !data.data['Meta Data']) {
+    //       return;
+    //     }
 
-        const newStock = {
-          symbol: data.data['Meta Data'].Symbol
-        }
+    //     const newStock = {
+    //       symbol: data.data['Meta Data'].Symbol
+    //     }
 
-        this.setState({
-          stock: [...this.state.stock, newStock]
-        })
-      })
+    //     this.setState({
+    //       stock: [...this.state.stock, newStock]
+    //     })
+    //   })
       
   }
 
@@ -44,6 +47,7 @@ class App extends Component {
         </p> }
          {/* <Stock3/>
         <Stock2 /> */}
+        {/* <Stock4 /> */}
         <Stock /> 
       </div>
     );
