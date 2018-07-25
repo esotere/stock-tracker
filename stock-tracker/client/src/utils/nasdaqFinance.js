@@ -3,7 +3,7 @@ import nf from 'nasdaq-finance'
 const nasdaqClient = new nf()
 
 
-// getInfo = (ticker) => {
+// nasdaqClient.getInfo() = (ticker) => {
 //     return this._getTickerPage(ticker)
 //         console.log
 //   }
@@ -12,7 +12,6 @@ const nasdaqClient = new nf()
         .catch(console.error)
 
 
-        // export default {
         //     // export default {
         //       RandomStock: function(query) {
         //         return axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&apikey=LFMT1TZ5KQGSDKHN`, { params: { q: query } });
@@ -22,7 +21,6 @@ const nasdaqClient = new nf()
     
                 
         //       }
-        //     }
 
 
 

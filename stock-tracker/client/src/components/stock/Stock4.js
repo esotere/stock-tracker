@@ -24,7 +24,7 @@ componentWillMount() {
     }
 
 loadStock = async () => {
-    const apiResponse = await nasdaqClient.getInfo;
+    const apiResponse = await nasdaqClient.getInfo();
     axios.get('/api/nasdaq-finance-attempt')
          .then(data => console.log(data))
      this.setState ({

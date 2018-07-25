@@ -47,7 +47,7 @@ class App extends Component {
         </p> }
          {/* <Stock3/>
         <Stock2 /> */}
-        {/* <Stock4 /> */}
+        <Stock4 />
         <Stock /> 
       </div>
     );
