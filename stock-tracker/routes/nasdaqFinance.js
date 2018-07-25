@@ -8,10 +8,10 @@ import nf from 'nasdaq-finance'
 // const auth = "Basic " + new Buffer(username + ':' + password).toString('base64');
 
 router.route('/nasdaq-finance-attempt')
-export const nf = new NasdaqFinance()
-  nf.getInfo('TSLA')
-    .then(data => res.json(data))
-    .catch(err => res.json({err: err.message}))
+ const nasdaqClient = new nf()
+  nasdaqClient.getInfo('TSLA')
+              .then(data => res.json(data))
+              .catch(err => res.json({err: err.message}))
 
 
 

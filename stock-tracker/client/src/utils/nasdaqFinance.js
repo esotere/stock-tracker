@@ -1,14 +1,34 @@
 import nf from 'nasdaq-finance'
-const nasdaqClient = new nf()
 // const nf = new NasdaqFinance()
+const nasdaqClient = new nf()
 
 
-const j = nasdaqClient.getInfo('TSLA')
-.then((response) => {
-console.log(response)
-})
-.catch(console.error)
-// export default j
+// getInfo = (ticker) => {
+//     return this._getTickerPage(ticker)
+//         console.log
+//   }
+      nasdaqClient.getInfo('TSLA')
+        .then((response) => {console.log(response)})
+        .catch(console.error)
+
+
+        // export default {
+        //     // export default {
+        //       RandomStock: function(query) {
+        //         return axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&apikey=LFMT1TZ5KQGSDKHN`, { params: { q: query } });
+        //       },
+        //       getStock: function(query) {
+        //         return axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&apikey=LFMT1TZ5KQGSDKHN`, { params: { q: query } });
+    
+                
+        //       }
+        //     }
+
+
+
+
+
+export default nasdaqClient
 // export default {
 //     randomStock: function(query) {
   

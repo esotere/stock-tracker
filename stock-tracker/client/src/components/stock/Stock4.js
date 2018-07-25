@@ -1,7 +1,9 @@
 import React, {Component} from "react";
 import axios from "axios"
 
-import nasdaqFinanceNpm from "../../utils/nasdaqFinanceNpm"
+import nasdaqClient from "../../utils/nasdaqFinance"
+
+// import nasdaqFinanceNpm from "../../utils/nasdaqFinanceNpm"
 // import { loadQuoteForStock, loadCompanyLogo, loadNews } from '../../../../routes/apiRoutes3'
 
 
@@ -22,10 +24,10 @@ componentWillMount() {
     }
 
 loadStock = async () => {
-    const apiResponse = await nasdaqFinanceNpm.getInfo;
+    const apiResponse = await nasdaqClient.getInfo;
     axios.get('/api/nasdaq-finance-attempt')
-      .then(data => console.log(data))
-      this.setState ({
+         .then(data => console.log(data))
+     this.setState ({
         stock: apiResponse.data
       })    
 
