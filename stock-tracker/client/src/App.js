@@ -73,10 +73,25 @@ class App extends Component {
             />}
         />
         <Route
-          path="/signup"
+          path="/profile"
           render={() =>
-            <Signup/>}
+            <Profile/>}
         />
+
+        <Route
+          path="/search"
+          render={() =>
+            <Search/>}
+        />
+
+        <Route
+          path="/mystocks"
+          render={() =>
+            <MyStock/>}
+        />
+
+
+
 
       </div>
     );
