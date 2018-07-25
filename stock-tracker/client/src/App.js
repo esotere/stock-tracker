@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 import Home from './components/Home';
 import MyStock from './components/MyStock';
@@ -6,6 +6,7 @@ import Profile from './components/Profile';
 import Search from './components/Search';
 import Login from './components/Home/Login';
 import Authentication from './components/Authentication';
+import Signup from './components/Authentication/Sign_up';
 import Navbar from './components/Navbar';
 import { BrowserRouter, Route,  Switch, Link } from "react-router-dom";
 
@@ -67,7 +68,7 @@ class App extends Component {
         <Route
           path="/login"
           render={() =>
-            <LoginForm
+            <Login
               updateUser={this.updateUser}
             />}
         />

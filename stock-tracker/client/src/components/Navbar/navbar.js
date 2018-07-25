@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Redirect } from 'react-router-dom';
 import { Route, Link } from 'react-router-dom';
-import '../App.css';
+import '../../App.css';
 import axios from 'axios';
 
 class Navbar extends Component {
@@ -34,44 +34,32 @@ render() {
     return (
       <div>
 
-        <header className="navbar App-header" id="nav-container"?
+        <header className="navbar App-header" id="nav-container">
           <div className="col-4">
             {loggedIn ? (
                 <section className="navbar-section">
                   <Link to ='#' className="btn btn-link text-secondary" onClick={this.logout}>
-                    <span className="text-secondary">logout</span></link>
+                    <span className="text-secondary">logout</span>
+                  </Link>
                 </section>
               ) : (
                     <section className="navbar-section">
                       <Link to="/" className="btn btn-link text-secondary">
-                        <span className="btn btn-link text-secondary">
-                          <span className="text-secondary">home</span>
-                      </Link>
+                        <span className="btn btn-link text-secondary"></span>
+                          <span className="text-secondary"></span>
+                       </Link>
                         <Link to="/" className="btn btn-link text-secondary">
-                          <span className="text-secondary">login</span>
-                        </Link>
+                          <span className="text-secondary"></span>
+                      </Link>
                     </section>
               )}
-            );
-      // </div>
-      // <div className="col-4 col-mr-auto">
-      // <div id="top-filler"></div>
-      //     <img src=
+
+      </div>
+      </header>
+      </div>
 
     )
 }
-
-export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
+}
 
 export default Navbar;

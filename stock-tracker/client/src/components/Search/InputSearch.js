@@ -7,12 +7,13 @@ import test from './test';
 class InputSearch extends React.Component {
   state = {input: '',
   searchedStocks:[],
+
 }
 
-  // handleButtonClick = (evt) => {
-  //    this.props.storedInput(this.state.input)
-  //    this.setState({input: input, searchedStock:[...this.props.searchedStock]})
-  // }
+  handleButtonClick = (evt) => {
+     this.props.storedInput(this.state.input)
+     this.setState({input: this.state.input})
+  }
 
   render() {
   const {searchedStocks} = this.props;
