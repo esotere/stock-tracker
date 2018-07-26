@@ -1,50 +1,58 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Stock from "./components/stock/Stock.js"
-import Stock2 from "./components/stock/stock2.js"
-import Stock3 from "./components/stock/stock3.js"
-import API from './utils/API';
-import axios from 'axios';
+import React, { Component } from "react";
+import { Route } from "react-router-dom";
+import { withRouter } from "react-router";
+import logo from "./arrows.svg";
+import "./App.css";
+import Stock from "./components/stock/Stock.js";
+import API from "./utils/API";
+import axios from "axios";
+import LoginModule from "./pages/LoginModule";
+// import Test from "./components/stock/stockTest.js"
+// import Stock2 from "./components/stock/stock2.js"
+// import Stock3 from "./components/stock/stock3.js"
 
-
-
-
+// const App = () => (
+//   <div>
+//     <LoginPage/>
+//   </div>
+// );
 class App extends Component {
   componentWillMount() {
-    console.log('><><')
-    
-   
-    API.RandomStock()
-      .then(data => {
-        if (!data.data || !data.data['Meta Data']) {
-          return;
-        }
+    console.log("><><");
 
-        const newStock = {
-          symbol: data.data['Meta Data'].Symbol
-        }
+    // API.RandomStock()
+    // .then(data => {
+    //   if (!data.data || !data.data["Meta Data"]) {
+    //     return;
+    //   }
 
-        this.setState({
-          stock: [...this.state.stock, newStock]
-        })
-      })
-      
+    //   const newStock = {
+    //     symbol: data.data["Meta Data"].Symbol
+    //   };
+
+    //   this.setState({
+    //     stock: [...this.state.stock, newStock]
+    //   });
+    // });
   }
 
   render() {
     return (
       <div className="App">
+        <div className="navbar">
+          <button className="active waves-effect waves-light btn">Login</button>
+          <button className="active waves-effect waves-light btn">Profile</button>
+          <button className="active waves-effect waves-light btn">Search</button>
+          <button className="active waves-effect waves-light btn">My Stocks</button>
+        </div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Stock-Tracker</h1>
+          <h1 className="App-title">My Stock Tracker</h1>
         </header>
-        { <p className="App-intro">
-          Hey Team-React! We have lift off.
-        </p> }
-         {/* <Stock3/>
-        <Stock2 /> */}
-        <Stock /> 
+        <LoginModule />
+        <Stock />
+        {/* <Route path="/" exact component={HomePage} /> */}
+        {/* <Route path="/login" exact component={LoginPage}/> */}
       </div>
     );
   }

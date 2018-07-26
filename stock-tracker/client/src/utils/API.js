@@ -5,10 +5,6 @@ import axios from "axios";
 
 
 
-
-
-// The getStock method retrieves stock from the server
-// It accepts a "query" or term to search the stock api for
 export default {
   RandomStock: function(query) {
     return axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&apikey=LFMT1TZ5KQGSDKHN`, { params: { q: query } });
@@ -18,11 +14,11 @@ export default {
   },
   // Deletes the stock with the given id
   deleteStock: function(id) {
-    return axios.delete("/api/stocks/" + id);
+    return axios.delete("/api/stock/" + id);
   },
   // Saves a stock to the database
   saveStock: function(stockData) {
-    return axios.post("/api/stocks", stockData);
+    return axios.post("/api/stock", stockData);
   }
 };
 

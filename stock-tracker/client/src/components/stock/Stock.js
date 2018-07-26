@@ -9,73 +9,60 @@ import API from "../../utils/API";
 // import { loadQuoteForStock, loadCompanyLogo, loadNews } from '../../../../routes/apiRoutes3'
 
 
-
 class Stock extends Component {
 	constructor(props) { 
 		super(props)
 		this.stock = props.stock
-	this.state = {
+		this.state = {
 		stock: [
 			
-		]
-	};
-}
+			]
+		};
+	}
 
 	componentDidMount () {
-		this.loadRandomStock()
+		// this.loadRandomStock()
 		// this.loadQuoteForStock()
 		// this.loadCompanyLogo()
 		// this.loadNews()
-	}
 
-	loadRandomStock = async () => {
-		const stockIdsRes = await API.getStock();
+		// loadRandomStock = async () => {
+		// 	const stockIdsRes = await API.getStock();
 
-		if (this.props.data) {
-		
+		// 	if (this.props.data) {
+		// 		const stockIds = stockIdsRes.data.map(data => data._id)
+		// 		const randomId = stockIds[Math.floor(Math.random() * stockIds.length)];
+		// 		const randomStock = await API.getstock(randomId);
+		// 		this.setState({
+		// 			stock: randomStock.data
+		// 		});
+		// 	}
+		// }
 
+		// getStock = async () => {
+		// 	const stockIdsRes = await API.getStock();
 
-		const stockIds = stockIdsRes.data.map(data => data._id)
-
-		const randomId = stockIds[Math.floor(Math.random() * stockIds.length)];
-
-		const randomStock = await API.getstock(randomId);
-
-		this.setState({
-			stock: randomStock.data
-		});
-	  }
-	}
-
-	getStock = async () => {
-		const stockIdsRes = await API.getStock();
-
-		if (this.props.data) {
-
-		const stockIds = stockIdsRes.data.map(data => data._id)
-
-		const selectedId = () => stockIdsRes(stockIds.data);
-
-		const selectedStock = await API.getstock(selectedId);
-
-		this.setState({
-			stock: selectedStock.data
-		});
-	  }
+		// 	if (this.props.data) {
+		// 		const stockIds = stockIdsRes.data.map(data => data._id)
+		// 		const selectedId = () => stockIdsRes(stockIds.data);
+		// 		const selectedStock = await API.getstock(selectedId);
+		// 		this.setState({
+		// 			stock: selectedStock.data
+		// 		});
+		// 	}
+		// }
 	}
 
 	render() {
-
 		const data = this.state.stock;
-        const listItems = data.map((d) => <li key={d.ID +1}></li>);
-
-
+		const listItems = data.map((d) => <li key={d.ID +1}></li>);
+		
 		return (
 			<Container fluid>
 				<Row>
 					<Col size="md-12">
 						<Jumbotron>
- 
+
 							<h1>
 								{listItems}
 								{/* {this.state.stock.companyLogo} */}
@@ -86,25 +73,25 @@ class Stock extends Component {
 						</Jumbotron>
 					</Col>
 				</Row>
-				<Row>
-					<Col size="md-10 md-offset-1">
-						<article>
-							<h1>Summary</h1>
-							{/* {this.state.stock.news} */}
-							<p>
-								{this.state.stock.summary}
-							</p>
-						</article>
-					</Col>
-				</Row>
-				<Row>
-					<Col size="md-2">
-						{/* <Router>
-						<Link to="/stocks">← Back to portfolio</Link>
-						</Router> */}
+					{/* <Row>
+						<Col size="md-10 md-offset-1">
+							<article>
+								<h1>Summary</h1>
+								{this.state.stock.news}
+								<p>
+									{this.state.stock.summary}
+								</p>
+							</article>
+						</Col>
+					</Row>
+					<Row>
+						<Col size="md-2">
+							<Router>
+							<Link to="/stocks">← Back to portfolio</Link>
+							</Router>
 
-					</Col>
-				</Row>
+						</Col>
+					</Row> */}
 			</Container>
 		);
 	}
@@ -218,6 +205,4 @@ export default Stock;
 // }
 
 // export default Stock;
-
-
 
