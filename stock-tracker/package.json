@@ -1,0 +1,35 @@
+{
+  "name": "stock-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "8.11.1",
+    "yarn": "1.7.0",
+    "npm": "6.1.0"
+  },
+  "dependencies": {
+    "alphavantage": "^1.1.1",
+    "axios": "^0.18.0",
+    "bson": "^3.0.0",
+    "express": "^4.16.3",
+    "iex-api": "^0.0.3",
+    "intrinio-realtime": "^2.1.0",
+    "mongoose": "^5.2.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.4",
+    "route": "^0.2.5"
+  },
+  "scripts": {
+    "start": "react-scripts start/if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "build": "react-scripts build cd client && npm run build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && yarn install",
+    "heroku-postbuild": "npm run build"
+  }
+}

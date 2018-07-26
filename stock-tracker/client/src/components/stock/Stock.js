@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
-// import API from "../../utils/intrinioApi";
+// import API from "../../utils/nasdaq-financeNpm";
 // import API from "../../utils/apiRoutes";
 
 // import { loadQuoteForStock, loadCompanyLogo, loadNews } from '../../../../routes/apiRoutes3'
