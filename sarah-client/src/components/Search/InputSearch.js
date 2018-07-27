@@ -11,8 +11,10 @@ class InputSearch extends React.Component {
 }
 
   handleButtonClick = (evt) => {
-     this.props.storedInput(this.state.input)
-     this.setState({input: this.state.input})
+    evt.preventDefault();
+    console.log(this.state.input)
+     // this.props.storedInput(this.state.input)
+     // this.setState({input: this.state.input})
   }
 
   render() {
@@ -31,12 +33,12 @@ class InputSearch extends React.Component {
   }
 }
 
-InputSearch.propTypes = {
-  input: ''
-};
-
-InputSearch.propTypes = {
-  input: PropTypes.string
-};
+// InputSearch.propTypes = {
+//   input: ''
+// };
+//
+// InputSearch.propTypes = {
+//   input: PropTypes.string
+// };
 
 export default InputSearch;

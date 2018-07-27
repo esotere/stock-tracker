@@ -1,1 +1,1 @@
-export index from "./stickyNote";
+export {default} from "./stickyNote";

@@ -1,7 +1,18 @@
-import React from"react";
+
 import "./stickyNote.css";
 import React, { Component } from "react";
+import NoteComponent from "./NoteComponent";
 
+class StickyNote extends Component {
+  render(){
+    return (
+      <div>
+        {notes.map(note => (
+          <NoteComponent {...notes} />
+      </div>
+    )
+  }
+}
 
 const notes = [
  {
@@ -12,13 +23,4 @@ const notes = [
  }
 ]
 
-export const NotesContainer = props => {
- const notes = props.notes;
- return (
-   <div>
-     {notes.map(note => (
-       <NoteComponent {...notes} />
-     ))}
-   </div>
- )
-}
+export default StickyNote;

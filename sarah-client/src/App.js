@@ -15,7 +15,7 @@ class App extends Component {
     super()
     this.state = {
       loggedIn: false,
-      username: null
+      username: ''
     }
 
     this.getUser = this.getUser.bind(this)
@@ -56,40 +56,49 @@ class App extends Component {
     return (
       <div className="App">
 
+        <BrowserRouter>
+        <div>
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
           <p>Join the party, {this.state.username}!</p>
         }
-        {/* Routes to different components */}
+
+  <Switch>
         <Route
           exact path="/"
           component={Home} />
         <Route
           path="/login"
-          render={() =>
+          render={(props) =>
             <Login
               updateUser={this.updateUser}
+              {...props}
             />}
         />
         <Route
           path="/profile"
-          render={() =>
-            <Profile/>}
+          render={(props) =>
+            <Profile
+            name={this.state.username}
+            {...props}/>}
         />
 
         <Route
           path="/search"
-          render={() =>
+          render={(props) =>
             <Search/>}
         />
 
         <Route
           path="/mystocks"
-          render={() =>
+          render={(props) =>
             <MyStock/>}
         />
 
+      </Switch>
+      </div>
+    </BrowserRouter>
 
 
 
@@ -100,28 +109,7 @@ class App extends Component {
 
 export default App;
 
-// class App extends React.Component {
-//   render() {
-//     return (
-//         <BrowserRouter>
-//           <div>
-//             <nav>
-//               <Link to="/">Home</Link> |
-//               <Link to="/profile">Profile</Link> |
-//               <Link to="/search">Search</Link> |
-//               <Link to="/myStock">MyStock</Link>
-//             </nav>
-//             <Switch>
-//
-//               <Route path="/profile" component={Profile}/>
-//               <Route path ="/search" component={Search} />
-//
-//             </Switch>
-//           </div>
-//         </BrowserRouter>
-//     );
-//   }
-// }
+
 
 
 // <Route exact path="/" component={Home}/>
