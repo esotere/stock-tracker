@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import Home from './components/Home';
-import MyStock from './components/MyStock';
+import MyStocks from './components/MyStock';
 import Profile from './components/Profile';
 import Search from './components/Search';
 import Login from './components/Home/Login';
@@ -15,7 +15,8 @@ class App extends Component {
     super()
     this.state = {
       loggedIn: false,
-      username: ''
+      username: '',
+      myStocks: []
     }
 
     this.getUser = this.getUser.bind(this)
@@ -87,13 +88,13 @@ class App extends Component {
         <Route
           path="/search"
           render={(props) =>
-            <Search/>}
+            <Search {...props} storeMyStocks={myStocks => this.setState({myStocks})} />}
         />
 
         <Route
-          path="/mystocks"
+          path="/myStock"
           render={(props) =>
-            <MyStock/>}
+            <MyStocks {...props} stocks={this.state.myStocks} />}
         />
 
       </Switch>

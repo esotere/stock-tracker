@@ -1,10 +1,4 @@
-// import myStock from './myStock';
-//
-//
-// const MyStock = props => {
-//   return (
-//     <div>
-//       <myStock/>
-//     </div>
-//   )
-// }
+import MyStocks from './myStock';
+export default MyStocks;
+
+// import StickyNote from '../components/stickyNote';
