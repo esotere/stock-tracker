@@ -11,7 +11,10 @@
     "alphavantage": "^1.1.1",
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
+<<<<<<< HEAD
     "body-parser": "^1.18.3",
+=======
+>>>>>>> c138b6b45a9e5c8c1bc915b15e10428ca9df0f65
     "bson": "^3.0.0",
     "express": "^4.16.3",
     "iex-api": "^0.0.3",
