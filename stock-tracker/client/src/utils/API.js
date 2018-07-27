@@ -14,18 +14,17 @@ import axios from "axios";
 
 // The getStock method retrieves stock from the server
 // It accepts a "query" or term to search the stock api for
-
 export default {
-  randomStock: function(query) {
-
+  loadRandomStock: function(query) {
+    return axios.get(`api/?symbol=AAPL`, { params: { q: query } })
 
   },
 
   getStock: function(query) {
-
+    return axios.get(`api/stockQuote?symbol=${query}`, { params: { q: query } })
     // router.get("/stocks", (req, res) => {
 
-    return axios.get(`https://api.iextrading.com/1.0?/stock/aapl/batch?types=quote,news,chart&range=1m&last=1`, { params: { q: query } });
+    // return axios.get(`https://api.iextrading.com/1.0?/stock/aapl/batch?types=quote,news,chart&range=1m&last=1`, { params: { q: query } });
     // })
   },
 
@@ -36,20 +35,9 @@ export default {
 
   // Saves a stock to the database
   saveStock: function(stockData) {
-
-    return axios.post("/api/stock", stockData);
-  }
-
     return axios.post("/api/stocks", stockData);
-  },
 
-  loadRandomStock: function(query) {
-    // router.get("/stocks", (req, res) => {
-
-    return axios.get("https://api.iextrading.com/1.0/stock/aapl/batch?types=quote,news,chart&range=1m&last=1");
-  // })
   }
-
 };
 
 

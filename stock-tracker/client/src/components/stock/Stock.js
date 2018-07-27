@@ -21,37 +21,38 @@ class Stock extends Component {
 	}
 
 	componentDidMount () {
-		// this.loadRandomStock()
+		this.loadRandomStock()
 		// this.loadQuoteForStock()
 		// this.loadCompanyLogo()
 		// this.loadNews()
-
-		// loadRandomStock = async () => {
-		// 	const stockIdsRes = await API.getStock();
-
-		// 	if (this.props.data) {
-		// 		const stockIds = stockIdsRes.data.map(data => data._id)
-		// 		const randomId = stockIds[Math.floor(Math.random() * stockIds.length)];
-		// 		const randomStock = await API.getstock(randomId);
-		// 		this.setState({
-		// 			stock: randomStock.data
-		// 		});
-		// 	}
-		// }
-
-		// getStock = async () => {
-		// 	const stockIdsRes = await API.getStock();
-
-		// 	if (this.props.data) {
-		// 		const stockIds = stockIdsRes.data.map(data => data._id)
-		// 		const selectedId = () => stockIdsRes(stockIds.data);
-		// 		const selectedStock = await API.getstock(selectedId);
-		// 		this.setState({
-		// 			stock: selectedStock.data
-		// 		});
-		// 	}
-		// }
 	}
+
+		loadRandomStock = async () => {
+			const stockIdsRes = await API.loadRandomStock();
+
+			if (this.props.data) {
+				const stockIds = stockIdsRes.data.map(data => data._id)
+				const randomId = stockIds[Math.floor(Math.random() * stockIds.length)];
+				const randomStock = await API.getstock(randomId);
+				this.setState({
+					stock: randomStock.data
+				});
+			}
+		}
+
+		getStock = async () => {
+			const stockIdsRes = await API.getStock();
+
+			if (this.props.data) {
+				const stockIds = stockIdsRes.data.map(data => data._id)
+				const selectedId = () => stockIdsRes(stockIds.data);
+				const selectedStock = await API.getstock(selectedId);
+				this.setState({
+					stock: selectedStock.data
+				});
+			}
+		}
+	
 
 	render() {
 		const data = this.state.stock;

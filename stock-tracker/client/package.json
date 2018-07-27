@@ -2,7 +2,7 @@
   "name": "stock-tracker",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3007",
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "alphavantage": "^1.1.1",
     "axios": "^0.18.0",
@@ -18,7 +18,8 @@
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
-    "recharts": "^1.0.1"
+    "recharts": "^1.0.1",
+    "stock-quote": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

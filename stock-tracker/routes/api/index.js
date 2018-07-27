@@ -1,1 +1,3 @@
-export * from "./api"
+module.exports = {
+    stocks: require('./stocks')
+}
