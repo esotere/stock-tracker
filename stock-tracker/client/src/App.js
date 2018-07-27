@@ -50,7 +50,7 @@ class App extends Component {
           <h1 className="App-title">My Stock Tracker</h1>
         </header>
         <LoginModule />
-        {/* <Stock4 /> */}
+        <Stock4 />
         <Stock />
         {/* <Route path="/" exact component={HomePage} /> */}
         {/* <Route path="/login" exact component={LoginPage}/> */}

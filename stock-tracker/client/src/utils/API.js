@@ -13,7 +13,7 @@ import axios from "axios";
 // It accepts a "query" or term to search the stock api for
 export default {
   loadRandomStock: function(query) {
-    return axios.get(`api/?symbol=AAPL`, { params: { q: query } })
+    return axios.get(`api/stock?symbol=AAPL`, { params: { q: query } })
     
   },
   

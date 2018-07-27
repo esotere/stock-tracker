@@ -28,7 +28,7 @@ componentWillMount() {
 loadStock = async () => {
     
 // router.route('/nasdaq-finance-attempt')
-axios.get('/nasdaq-finance-attempt', (req, res) => {
+axios.get('/explore', (req, res) => {
     // app.get('/nasdaq-finance-attempt', (req, res) => {
     
         quote.getQuote('GOOGL') // or quote.getQuote('GOOGL', '');
