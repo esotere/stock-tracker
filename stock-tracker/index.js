@@ -2,9 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const config = require('./config');
+const mongoose = require('mongoose');
+
+mongoose.connect(config.dbUri);
 
 // connect to the database and load models
-require('./models').connect(config.dbUri);
+const { Stock, User } = require('./models');
 
 const app = express();
 // tell the app to look for static files in these directories
@@ -22,14 +25,14 @@ passport.use('local-signup', localSignupStrategy);
 passport.use('local-login', localLoginStrategy);
 
 // pass the authenticaion checker middleware
-const authCheckMiddleware = require('./middleware/auth-check');
+const authCheckMiddleware = require('./middleware/authCheck');
 app.use('/api', authCheckMiddleware);
 
 // routes
 const authRoutes = require('./routes/auth');
 const apiRoutes = require('./routes/api');
 app.use('/auth', authRoutes);
-app.use('/api', apiRoutes);
+app.use('/api', apiRoutes.stocks);
 
 // Set Port, hosting services will look for process.env.PORT
 app.set('port', (process.env.PORT || 3000));

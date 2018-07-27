@@ -1,6 +1,6 @@
 // const axios = require('axios');
-import router from "react"
-import nf from 'nasdaq-finance'
+const router = require("express").Router();
+const nf = require('nasdaq-finance')
 
 
 // const username = "5ea1efe25726d96bd3301b88a9b1438d";
@@ -8,11 +8,13 @@ import nf from 'nasdaq-finance'
 // const auth = "Basic " + new Buffer(username + ':' + password).toString('base64');
 
 router.route('/nasdaq-finance-attempt')
- const nasdaqClient = new nf()
-  nasdaqClient.getInfo('TSLA')
-              .then(data => res.json(data))
-              .catch(err => res.json({err: err.message}))
-
+    get((req, res) => {
+        const nasdaqClient = new nf()
+        nasdaqClient.getInfo('TSLA')
+                    .then(data => res.json(data))
+                    .catch(err => res.json({err: err.message}))
+      
+    })
 
 
 

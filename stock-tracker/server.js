@@ -19,8 +19,12 @@ app.use(routes);
 // app.use(routes2);
 // app.use(routes3)
 
-app.get('/lol', (req, res) => {
-	res.json({hello: 'dafsdsaf'})
+app.get('/nasdaq-finance-attempt', (req, res) => {
+	const nasdaqClient = new nf()
+	nasdaqClient.getInfo('TSLA')
+				.then(data => res.json(data))
+				.catch(err => res.json({err: err.message}))
+  
 })
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactstocklist");

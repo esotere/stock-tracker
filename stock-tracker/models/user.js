@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-
-const userSchema = new Schema({
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
-  email: { type: String, required: true },
-  password: { type: String, required: true },
-  faves: { type: Array, required: true },
-});
-
-const User = mongoose.model("User", userSchema);
-
-module.exports = User;
-=======
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
@@ -65,4 +49,3 @@ UserSchema.pre('save', function saveHook(next) {
 
 
 module.exports = mongoose.model('User', UserSchema);
->>>>>>> 745d201678e76cf481fb29a51a6cb460b6f85a30
