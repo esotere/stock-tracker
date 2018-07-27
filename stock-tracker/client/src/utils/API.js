@@ -12,14 +12,14 @@ import axios from "axios";
 // The getStock method retrieves stock from the server
 // It accepts a "query" or term to search the stock api for
 export default {
-  randomStock: function(symbol) {
-    return axios.get(`/stock?symbol=AAPL`)
+  randomStock: function(query) {
+    return axios.get(`api/stock?symbol=AAPL`, { params: { q: query } })
     
     
   },
   
-  getStock: function(symbol) {
-    return axios.get(`/stockQuote?symbol=${symbol}`)
+  getStock: function(query) {
+    return axios.get(`api/stockQuote?symbol=${query}`, { params: { q: query } })
     // router.get("/stocks", (req, res) => {
 
     // return axios.get(`https://api.iextrading.com/1.0?/stock/aapl/batch?types=quote,news,chart&range=1m&last=1`, { params: { q: query } });
