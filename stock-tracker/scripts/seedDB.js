@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 // This file empties the stocks collection and inserts the stocks below
 
 mongoose.connect(
-	process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist"
+	process.env.MONGODB_URI || "mongodb://localhost/reactstocklist"
 );
 
 const stockSeed = [

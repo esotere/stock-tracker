@@ -8,6 +8,6 @@ const StockSchema = new Schema({
   date: { type: Date, default: Date.now }
 });
 
-const Stock = mongoose.model("Stock", stockSchema);
+const Stock = mongoose.model("Stock", StockSchema);
 
 module.exports = Stock;
