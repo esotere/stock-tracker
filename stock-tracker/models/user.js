@@ -1,6 +1,7 @@
-<<<<<<< HEAD
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const bcrypt = require('bcryptjs');
 
 const userSchema = new Schema({
   firstName: { type: String, required: true },
@@ -13,9 +14,8 @@ const userSchema = new Schema({
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
-=======
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
+
+
 
 // define the User model schema
 const UserSchema = new mongoose.Schema({
@@ -65,4 +65,3 @@ UserSchema.pre('save', function saveHook(next) {
 
 
 module.exports = mongoose.model('User', UserSchema);
->>>>>>> 745d201678e76cf481fb29a51a6cb460b6f85a30
