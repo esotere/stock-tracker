@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
-import { withRouter } from "react-router";
+// import { Route } from "react-router-dom";
+// import { withRouter } from "react-router";
 import logo from "./arrows.svg";
 import "./App.css";
 import Stock from "./components/stock/Stock.js";
-import API from "./utils/API";
-import axios from "axios";
+// import API from "./utils/API";
+// import axios from "axios";
 import LoginModule from "./pages/LoginModule";
 // import Test from "./components/stock/stockTest.js"
 // import Stock2 from "./components/stock/stock2.js"

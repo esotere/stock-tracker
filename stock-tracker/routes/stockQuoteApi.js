@@ -1,6 +1,7 @@
 // const axios = require('axios');
 const router = require("express").Router();
-const nf = require('nasdaq-finance')
+// const nf = require('nasdaq-finance')
+const quote = require('stock-quote');
 
 
 // const username = "5ea1efe25726d96bd3301b88a9b1438d";
@@ -9,11 +10,15 @@ const nf = require('nasdaq-finance')
 
 router.route('/nasdaq-finance-attempt')
     get((req, res) => {
-        const nasdaqClient = new nf()
-        nasdaqClient.getInfo('TSLA')
-                    .then(data => res.json(data))
-                    .catch(err => res.json({err: err.message}))
-      
+        // app.get('/nasdaq-finance-attempt', (req, res) => {
+        
+            quote.getQuote('GOOGL') // or quote.getQuote('GOOGL', '');
+            .then( (data) => {
+                res.json(data)
+            })
+            .catch(err => {
+                res.json(err.message)
+            })
     })
 
 

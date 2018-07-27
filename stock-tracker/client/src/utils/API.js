@@ -6,27 +6,23 @@ import axios from "axios";
 // const password = process.env.INTRINIO_API_PASSWORD;
 // const auth = "Basic " + new Buffer(username + ':' + password).toString('base64');
 
-<<<<<<< HEAD
-
-
-=======
 // const auth = {}
 
 
 // The getStock method retrieves stock from the server
 // It accepts a "query" or term to search the stock api for
->>>>>>> 745d201678e76cf481fb29a51a6cb460b6f85a30
 export default {
-  randomStock: function(query) {
-
+  randomStock: function(symbol) {
+    return axios.get(`/stock?symbol=AAPL`)
+    
     
   },
   
-  getStock: function(query) {
-
+  getStock: function(symbol) {
+    return axios.get(`/stockQuote?symbol=${symbol}`)
     // router.get("/stocks", (req, res) => {
 
-    return axios.get(`https://api.iextrading.com/1.0?/stock/aapl/batch?types=quote,news,chart&range=1m&last=1`, { params: { q: query } });
+    // return axios.get(`https://api.iextrading.com/1.0?/stock/aapl/batch?types=quote,news,chart&range=1m&last=1`, { params: { q: query } });
     // })
   },
  
@@ -37,10 +33,6 @@ export default {
   
   // Saves a stock to the database
   saveStock: function(stockData) {
-<<<<<<< HEAD
-    return axios.post("/api/stock", stockData);
-  }
-=======
     return axios.post("/api/stocks", stockData);
   },
   
@@ -50,7 +42,6 @@ export default {
     return axios.get("https://api.iextrading.com/1.0/stock/aapl/batch?types=quote,news,chart&range=1m&last=1");
   // }) 
   } 
->>>>>>> 745d201678e76cf481fb29a51a6cb460b6f85a30
 };
 
 
