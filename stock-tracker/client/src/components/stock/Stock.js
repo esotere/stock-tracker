@@ -28,7 +28,7 @@ class Stock extends Component {
 	}
 
 		loadRandomStock = async () => {
-			const stockIdsRes = await API.getStock();
+			const stockIdsRes = await API.loadRandomStock();
 
 			if (this.props.data) {
 				const stockIds = stockIdsRes.data.map(data => data._id)

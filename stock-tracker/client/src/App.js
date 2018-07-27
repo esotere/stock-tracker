@@ -9,7 +9,7 @@ import Stock from "./components/stock/Stock.js";
 import LoginModule from "./pages/LoginModule";
 // import Test from "./components/stock/stockTest.js"
 // import Stock2 from "./components/stock/stock2.js"
-// import Stock3 from "./components/stock/stock3.js"
+import Stock4 from "./components/stock/Stock4.js"
 
 // const App = () => (
 //   <div>
@@ -50,6 +50,7 @@ class App extends Component {
           <h1 className="App-title">My Stock Tracker</h1>
         </header>
         <LoginModule />
+        {/* <Stock4 /> */}
         <Stock />
         {/* <Route path="/" exact component={HomePage} /> */}
         {/* <Route path="/login" exact component={LoginPage}/> */}
