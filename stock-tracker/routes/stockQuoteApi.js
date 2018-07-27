@@ -9,10 +9,10 @@ const quote = require('stock-quote');
 // const auth = "Basic " + new Buffer(username + ':' + password).toString('base64');
 
 router.route('/nasdaq-finance-attempt')
-    get((req, res) => {
+    axios.get((req, res) => {
         // app.get('/nasdaq-finance-attempt', (req, res) => {
         
-            quote.getQuote('GOOGL') // or quote.getQuote('GOOGL', '');
+            quote.getQuote('AAPL') // or quote.getQuote('GOOGL', '');
             .then( (data) => {
                 res.json(data)
             })

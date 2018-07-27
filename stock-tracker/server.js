@@ -39,19 +39,19 @@ app.use('/api', authCheckMiddleware);
 // routes
 // app.use(routes);
 
-const quote = require('stock-quote');
-app.get('/nasdaq-finance-attempt', (req, res) => {
+// const quote = require('stock-quote');
+// app.get('/nasdaq-finance-attempt', (req, res) => {
 
-	quote.getQuote('GOOGL') // or quote.getQuote('GOOGL', '');
-	.then( (data) => {
-		res.json(data)
-	})
-	.catch(err => {
-		res.json(err.message)
-	})
+// 	quote.getQuote('GOOGL') // or quote.getQuote('GOOGL', '');
+// 	.then( (data) => {
+// 		res.json(data)
+// 	})
+// 	.catch(err => {
+// 		res.json(err.message)
+// 	})
 	
   
-})
+// })
 
 const authRoutes = require('./routes/auth');
 const apiRoutes = require('./routes/api');
