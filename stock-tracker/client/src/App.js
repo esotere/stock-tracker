@@ -10,6 +10,8 @@ import LoginModule from "./pages/LoginModule";
 // import Test from "./components/stock/stockTest.js"
 // import Stock2 from "./components/stock/stock2.js"
 import Stock4 from "./components/stock/Stock4.js"
+import { BrowserRouter as  Route } from 'react-router-dom'
+
 
 // const App = () => (
 //   <div>
@@ -50,8 +52,8 @@ class App extends Component {
           <h1 className="App-title">My Stock Tracker</h1>
         </header>
         <LoginModule />
-        {/* <Stock4 /> */}
-
+        <Stock4 />
+        <Stock />
         <Route path="/stock/:symbol" component={Stock} />
         {/* <Route path="/" exact component={HomePage} /> */}
         {/* <Route path="/login" exact component={LoginPage}/> */}

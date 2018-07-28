@@ -1,7 +1,7 @@
 import React from "react";
 
-export const stock = ({match}) => (
+export const StockInd = props => (
   <li className="individual-stock-view">
-    {match.params.stock}
+    {props.children}
   </li>
 );
