@@ -16,9 +16,7 @@ class Stock extends Component {
 		super(props)
 		this.stock = props.stock
 		this.state = {
-		stock: [
-
-			]
+			stock: null
 		};
 	}
 
@@ -54,42 +52,78 @@ class Stock extends Component {
 			}
 		}
 
-		getStock = async (symbol) => {
+		updateInput = (e) => {
+			this.setState({
+				search: e.target.value
+			})
+		}
+
+		getStock = async () => {
+			const symbol = this.state.search;
 			const stockIdsRes = await API.getStock(symbol);
 
-			if (this.props.data) {
-				const stockIds = stockIdsRes.data.map(data => data._id)
-				const selectedId = () => stockIdsRes(stockIds.data);
-				const selectedStock = await API.getstock(selectedId);
-				this.setState({
-					stock: selectedStock.data
-				});
+			if (!stockIdsRes.data) {
+				return this.setState({
+					notFound: true,
+					stock: null
+				})
 			}
+
+			this.setState({
+				stock: stockIdsRes.data,
+				notFound: false,
+			});
+
+			// if (this.props.data) {
+			// 	const stockIds = stockIdsRes.data.map(data => data._id)
+			// 	const selectedId = () => stockIdsRes(stockIds.data);
+			// 	const selectedStock = await API.getstock(selectedId);
+
+			// 	this.setState({
+			// 		stock: selectedStock.data
+			// 	});
+			// }
 		}
 
 
 	render() {
 		const data = this.state.stock;
-		const listItems = data.map((d) => <li key={d.ID +1}></li>);
 
 		return (
 			<Container fluid>
 				<Row>
-					<h1> Hey</h1>
-					<p>{this.state.totalRevenue}</p>
 					<Col size="md-12">
 						<Jumbotron>
+							<h2>Search for a stock</h2>
+							<input onChange={this.updateInput} />
+							<button onClick={() => this.getStock()}>Search Stock</button>
 
-							<h1>
-								{listItems}
-								{/* {this.state.stock.companyLogo} */}
+							<h1 style={{marginTop: '1em'}}>
+								{this.state.notFound &&
+									<p style={{color: 'red', fontSize: '24px'}}>Stock not found :( </p>
+								}
+
+								{this.state.stock && <div style={{textAlign: 'left', fontSize: '24px' }}>
+									<h2>Stock Symbol: {this.state.stock.symbol}</h2>
+
+									<p>current price: {this.state.stock.currentPrice} {this.state.stock.currency}</p>
+									<p>profit margin: {this.state.stock.profitMargins}</p>
+									<p>cash per share: {this.state.stock.cashPerShare}</p>
+									<p>gross profits: {this.state.stock.grossProfits}</p>
+									<p>current price: {this.state.stock.currentPrice}</p>
+									</div>
+								}
 							</h1>
-							<h2>
+
+
+							{/* <h2>
 								{this.state.stock.symbol}
-							</h2>
+							</h2> */}
 						</Jumbotron>
 					</Col>
 				</Row>
+
+
 					{/* <Row>
 						<Col size="md-10 md-offset-1">
 							<article>
