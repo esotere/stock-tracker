@@ -1,0 +1,56 @@
+.notes_div{
+
+       position: absolute;
+       bottom: -248px;
+       overflow: hidden;
+       height: 70px;
+       border-radius: 2px;
+       color: #7F7F7F;
+       background: white;
+       width: 98%;
+   }
+   .notes_div:hover{
+       -webkit-transition: height 0.3s ease-in-out;
+       -moz-transition: height 0.3s ease-in-out;
+       -o-transition: height 0.3s ease-in-out;
+       transition: height 0.3s ease-in-out;
+       height: 250px;
+   }
+   .notes_div i{
+       font-size: 1em;
+   }
+   .notes_head{
+   }
+   .notes_header{
+       background: whitesmoke;
+       border-bottom: 1px solid lightgray;
+       padding:5px;
+       text-align: right;
+   }
+   .notes_content{
+       font-size: 0.8em;
+   }
+   .notes_short{
+       padding:5px 10px;
+   }
+   .notes_person{
+   }
+   .notes_title{
+       font-size: 1.2em;
+   }
+   .notes_detail{
+       padding: 10px;
+   }
+   .notes_partition{
+       border-bottom: 1px solid #ccc;
+       padding:5px 10px;
+   }
+   .notes_action{
+       text-align: center;
+       padding: 10px;
+
+
+   }
+   #genSkypeCall p{
+       text-align: center;
+   }
