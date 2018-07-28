@@ -8,6 +8,7 @@ import API from "../../utils/API";
 
 // import { loadQuoteForStock, loadCompanyLogo, loadNews } from '../../../../routes/apiRoutes3'
 
+import { withRouter } from 'react-router';
 
 class Stock extends Component {
 	constructor(props) {
@@ -21,7 +22,19 @@ class Stock extends Component {
 	}
 
 	componentDidMount () {
-		API.getStock('TSLA')
+		let symbol;
+
+		if (this.props.match && this.props.match.params) {
+			symbol = this.props.match.params.symbol;
+
+			API.getStock(symbol)
+				.then(data => {
+					this.setState({
+						totalRevenue: data.totalRevenue
+					})
+				})
+
+		}
 		// this.loadQuoteForStock()
 		// this.loadCompanyLogo()
 		// this.loadNews()
@@ -61,6 +74,8 @@ class Stock extends Component {
 		return (
 			<Container fluid>
 				<Row>
+					<h1> Hey</h1>
+					<p>{this.state.totalRevenue}</p>
 					<Col size="md-12">
 						<Jumbotron>
 
@@ -98,7 +113,7 @@ class Stock extends Component {
 	}
 }
 
-export default Stock;
+export default withRouter(Stock);
 
 //=======================================================================================================
 //=================================================================================================================

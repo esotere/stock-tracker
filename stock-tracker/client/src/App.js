@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 // import { withRouter } from "react-router";
 import logo from "./arrows.svg";
 import "./App.css";
@@ -51,7 +51,8 @@ class App extends Component {
         </header>
         <LoginModule />
         {/* <Stock4 /> */}
-        <Stock />
+
+        <Route path="/stock/:symbol" component={Stock} />
         {/* <Route path="/" exact component={HomePage} /> */}
         {/* <Route path="/login" exact component={LoginPage}/> */}
       </div>

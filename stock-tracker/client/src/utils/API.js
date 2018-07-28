@@ -21,7 +21,7 @@ export default {
   },
 
   getStock: function(query) {
-    return axios.get(`get-stock?symbol=${query}`, { params: { q: query } })
+    return axios.get(`/get-stock`, { params: { symbol: query } })
     // router.get("/stocks", (req, res) => {
 
     // return axios.get(`https://api.iextrading.com/1.0?/stock/aapl/batch?types=quote,news,chart&range=1m&last=1`, { params: { q: query } });
