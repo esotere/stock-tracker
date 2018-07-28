@@ -9,10 +9,9 @@ const quote = require('stock-quote');
 // const auth = "Basic " + new Buffer(username + ':' + password).toString('base64');
 
 router.route('/nasdaq-finance-attempt')
-    axios.get((req, res) => {
-        // app.get('/nasdaq-finance-attempt', (req, res) => {
-        
-            quote.getQuote('AAPL') // or quote.getQuote('GOOGL', '');
+    .get((req, res) => {
+
+        quote.getQuote('AAPL') // or quote.getQuote('GOOGL', '');
             .then( (data) => {
                 res.json(data)
             })
@@ -30,10 +29,10 @@ router.route('/nasdaq-finance-attempt')
 //     iex: () => {
 //       iex.stockCompany('AAPL')
 //     .then(quote => console.log(quote))
-    
+
 //     }
 //   })
-  
+
 
 
 // router.route('/intrinoattempt')

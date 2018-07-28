@@ -10,18 +10,18 @@ import API from "../../utils/API";
 
 
 class Stock extends Component {
-	constructor(props) { 
+	constructor(props) {
 		super(props)
 		this.stock = props.stock
 		this.state = {
 		stock: [
-			
+
 			]
 		};
 	}
 
 	componentDidMount () {
-		this.loadRandomStock()
+		API.getStock('TSLA')
 		// this.loadQuoteForStock()
 		// this.loadCompanyLogo()
 		// this.loadNews()
@@ -40,8 +40,8 @@ class Stock extends Component {
 			}
 		}
 
-		getStock = async () => {
-			const stockIdsRes = await API.getStock();
+		getStock = async (symbol) => {
+			const stockIdsRes = await API.getStock(symbol);
 
 			if (this.props.data) {
 				const stockIds = stockIdsRes.data.map(data => data._id)
@@ -52,12 +52,12 @@ class Stock extends Component {
 				});
 			}
 		}
-	
+
 
 	render() {
 		const data = this.state.stock;
 		const listItems = data.map((d) => <li key={d.ID +1}></li>);
-		
+
 		return (
 			<Container fluid>
 				<Row>
@@ -108,7 +108,7 @@ export default Stock;
 
 
 // class Stock extends Component {
-// 	constructor(props) { 
+// 	constructor(props) {
 // 		super(props)
 // 	this.state = {
 // 		stock: [{
@@ -199,7 +199,7 @@ export default Stock;
 // 							</tbody>
 // 							</table>
 // 						</Jumbotron>
-				
+
 // 			</Container>
 // 		);
 // 	}
