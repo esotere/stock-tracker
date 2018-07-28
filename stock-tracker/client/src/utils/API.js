@@ -6,6 +6,9 @@ import axios from "axios";
 // const password = process.env.INTRINIO_API_PASSWORD;
 // const auth = "Basic " + new Buffer(username + ':' + password).toString('base64');
 
+
+
+
 // const auth = {}
 
 
@@ -13,28 +16,28 @@ import axios from "axios";
 // It accepts a "query" or term to search the stock api for
 export default {
   loadRandomStock: function(query) {
-    return axios.get(`api/stock?symbol=AAPL`, { params: { q: query } })
-    
+    return axios.get(`/nasdaq-finance-attempt?symbol=AAPL`, { params: { q: query } })
+
   },
-  
+
   getStock: function(query) {
-    return axios.get(`api/stockQuote?symbol=${query}`, { params: { q: query } })
+    return axios.get(`get-stock?symbol=${query}`, { params: { q: query } })
     // router.get("/stocks", (req, res) => {
 
     // return axios.get(`https://api.iextrading.com/1.0?/stock/aapl/batch?types=quote,news,chart&range=1m&last=1`, { params: { q: query } });
     // })
   },
- 
+
   // Deletes the stock with the given id
   deleteStock: function(id) {
     return axios.delete("/api/stock/" + id);
   },
-  
+
   // Saves a stock to the database
   saveStock: function(stockData) {
     return axios.post("/api/stocks", stockData);
-  
-  } 
+
+  }
 };
 
 
@@ -71,5 +74,5 @@ export default {
 //   export default {
     // getRandomStock: function(query) {
     //   return axios.get("https://api.intrinio.com/companies?ticker=AAPL",  {headers: { "Authorization": auth }}, { params: { q: query } });
-    // }  
+    // }
 // };

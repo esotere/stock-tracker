@@ -6188,7 +6188,7 @@ request-promise-native@^1.0.5:
     stealthy-require "^1.1.0"
     tough-cookie ">=2.3.3"
 
-request@^2.79.0, request@^2.83.0:
+request@^2.79.0, request@^2.83.0, request@^2.87.0:
   version "2.87.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.87.0.tgz#32f00235cd08d482b4d0d68db93a829c0ed5756e"
   dependencies:
@@ -6735,6 +6735,12 @@ statuses@~1.4.0:
 stealthy-require@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
+
+stock-quote@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/stock-quote/-/stock-quote-1.0.0.tgz#7f56c24b6aba7a0c831c50b179a193caccd6a5e1"
+  dependencies:
+    request "^2.87.0"
 
 stream-browserify@^2.0.1:
   version "2.0.1"

@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import axios from "axios"
 
+
 // import nasdaqClient from "../../utils/nasdaqFinance"
 
 // import nasdaqFinanceNpm from "../../utils/nasdaqFinanceNpm"
@@ -11,7 +12,7 @@ const quote = require('stock-quote');
 
 
 class Stock extends Component {
-	constructor(props) { 
+	constructor(props) {
 		super(props)
 		this.stock = props.stock
 	this.state = {
@@ -26,11 +27,11 @@ componentWillMount() {
     }
 
 loadStock = async () => {
-    
+
 // router.route('/nasdaq-finance-attempt')
 axios.get('/explore', (req, res) => {
     // app.get('/nasdaq-finance-attempt', (req, res) => {
-    
+
         quote.getQuote('GOOGL') // or quote.getQuote('GOOGL', '');
         .then( (data) => {
             res.json(data)
@@ -47,7 +48,7 @@ axios.get('/explore', (req, res) => {
     //      .then(data => console.log(data))
      this.setState ({
         stock: apiResponse
-      })    
+      })
 
 }
 render(){

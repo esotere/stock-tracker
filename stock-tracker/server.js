@@ -39,19 +39,19 @@ app.use('/api', authCheckMiddleware);
 // routes
 // app.use(routes);
 
-// const quote = require('stock-quote');
-// app.get('/nasdaq-finance-attempt', (req, res) => {
+const quote = require('stock-quote');
+app.get('/get-stock', (req, res) => {
 
-// 	quote.getQuote('GOOGL') // or quote.getQuote('GOOGL', '');
-// 	.then( (data) => {
-// 		res.json(data)
-// 	})
-// 	.catch(err => {
-// 		res.json(err.message)
-// 	})
-	
-  
-// })
+	quote.getQuote(req.query.symbol) // or quote.getQuote('GOOGL', '');
+    .then( (data) => {
+      res.json(data)
+    })
+    .catch(err => {
+      res.json(err.message)
+    })
+
+
+})
 
 const authRoutes = require('./routes/auth');
 const apiRoutes = require('./routes/api');
@@ -92,14 +92,6 @@ app.listen(app.get('port'), () => {
 // // app.use(routes2);
 // // app.use(routes3)
 
-// // app.get('/nasdaq-finance-attempt', (req, res) => {
-// // 	res.json('dsfds')
-// // 	const nasdaqClient = new nf()
-// // 	nasdaqClient.getInfo('TSLA')6
-// // 				.then(data => res.json(data))
-// // 				.catch(err => res.json({err: err.message}))
-  
-// // })
 // // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactstocklist");
 
