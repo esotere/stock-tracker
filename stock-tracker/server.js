@@ -40,7 +40,7 @@ app.use('/api', authCheckMiddleware);
 // app.use(routes);
 
 const quote = require('stock-quote');
-app.get('/get-stock', (req, res) => {
+		get('/get-stock', (req, res) => {
 
 	quote.getQuote(req.query.symbol) // or quote.getQuote('GOOGL', '');
     .then( (data) => {

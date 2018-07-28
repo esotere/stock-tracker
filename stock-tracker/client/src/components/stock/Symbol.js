@@ -1,7 +1,7 @@
 import React from "react";
 
-export const stock = ({match}) => (
+export const symbol = ({match}) => (
   <li className="individual-stock-view">
-    {match.params.stock}
+    {match.params.symbol}
   </li>
 );

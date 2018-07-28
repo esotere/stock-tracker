@@ -10,6 +10,8 @@ import LoginModule from "./pages/LoginModule";
 // import Test from "./components/stock/stockTest.js"
 // import Stock2 from "./components/stock/stock2.js"
 import Stock4 from "./components/stock/Stock4.js"
+import { BrowserRouter as  Route } from 'react-router-dom'
+
 
 // const App = () => (
 //   <div>
@@ -52,6 +54,7 @@ class App extends Component {
         <LoginModule />
         <Stock4 />
         <Stock />
+        <Route path="/get-stock" exact component={Symbol} />
         {/* <Route path="/" exact component={HomePage} /> */}
         {/* <Route path="/login" exact component={LoginPage}/> */}
       </div>

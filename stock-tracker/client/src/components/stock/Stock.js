@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
+import stock from "./StockInd";
 // import API from "../../utils/nasdaq-financeNpm";
 // import API from "../../utils/apiRoutes";
 
@@ -27,8 +28,8 @@ class Stock extends Component {
 		// this.loadNews()
 	}
 
-		loadRandomStock = async () => {
-			const stockIdsRes = await API.loadRandomStock();
+		loadRandomStock = async (symbol) => {
+			const stockIdsRes = await API.loadRandomStock(symbol);
 
 			if (this.props.data) {
 				const stockIds = stockIdsRes.data.map(data => data._id)
