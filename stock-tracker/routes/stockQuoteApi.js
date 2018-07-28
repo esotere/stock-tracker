@@ -8,7 +8,7 @@ const quote = require('stock-quote');
 // const password = "f3779b9eb9fd52dd1b4ed24630feb9b9";
 // const auth = "Basic " + new Buffer(username + ':' + password).toString('base64');
 
-router.route('/nasdaq-finance-attempt')
+router.route('/get-stock')
     .get((req, res) => {
 
         quote.getQuote('AAPL') // or quote.getQuote('GOOGL', '');
